@@ -36,6 +36,10 @@ for i in (broken + water + [20]):
     starter.remove(i)
 starterRes = random.choice(starter)
 
+try:
+    shutil.rmtree("NDS_UNPACK")
+except:
+    pass
 subprocess.run([ "dslazy.bat", "UNPACK", sys.argv[1] ])
 subprocess.run([ "xdelta3-3.0.11-x86_64.exe", "-d", "-f", "-s", "NDS_UNPACK/data/episode/e0102", "output_e0102.xdelta",
     "NDS_UNPACK/data/episode/e0102x" ])
