@@ -11,3 +11,6 @@ Features:
   where it says what they are, and I want to ensure all 100 vivosaurs can always be revived
 - Teams are not edited, because there are a ton of team files, and my experience from doing
   that FFC challenge hack is that it takes *forever* to do anything with them
+
+Also, you download this by pressing the green "Code" button and choosing "Download ZIP," and
+you run it by dragging and dropping an FF1 ROM onto randomize.bat.
