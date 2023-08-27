@@ -2,6 +2,7 @@
 This is a digsite and starter randomizer for FF1.
 
 Features:
+- You can only dig up the main 100
 - Vivos are matched 1-to-1, so nothing is impossible to get
 - Your starter cannot be Spinax or water-type, nor in "broken" (see below)
 - The three vivosaurs listed in "broken" in the Python code only appear post-game
