@@ -2,6 +2,9 @@
 This is a digsite and starter randomizer for FF1.
 
 Features:
+- This mod uses event-editing shenanigans to make it so you cannot go to the Trial Dig Site,
+  and you can go to Greenhorn right away. As a result of this, however, if you try to back out
+  of the digsite selection menu during Chapter 1, the game will freeze
 - You can only dig up the main 100
 - Vivos are matched 1-to-1, so nothing is impossible to get
 - Your starter cannot be Spinax or water-type, nor in "broken" (see below)
