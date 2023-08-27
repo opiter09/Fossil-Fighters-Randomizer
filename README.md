@@ -8,7 +8,7 @@ Features:
 - You can only dig up the main 100
 - Vivos are matched 1-to-1, so nothing is impossible to get
 - Your starter cannot be Spinax or water-type, nor in "broken" (see below)
-- The three vivosaurs listed in "broken" in the Python code only appear post-game
+- The three vivosaurs listed in "broken" in the Python code only appear post-game.
   These are Lambeo, Guan, and T-Rex. All you need to do to change this is edit broken, which
   can only have up to 8 items. The values are their Numbers, of course
 - You will never be able to dig up Tryma or the DP vivosaurs. This is because I cannot find
