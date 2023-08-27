@@ -17,6 +17,8 @@ Features:
   Digadigamid
 - Teams are not edited, because there are a ton of team files, and my experience from doing
   that FFC challenge hack is that it takes *forever* to do anything with them
+- No text is altered. The thing saying you got a "Spinax dino medal" at the beginning should be
+  the only oddity, but who knows
 
 Also, you download this by pressing the green "Code" button and choosing "Download ZIP," and
 you run it by dragging and dropping an FF1 ROM onto randomize.bat.
