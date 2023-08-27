@@ -10,6 +10,8 @@ Features:
   can only have up to 8 items. The values are their Numbers, of course
 - You will never be able to dig up Tryma or the DP vivosaurs. This is because I cannot find
   where it says what they are, and I want to ensure all 100 vivosaurs can always be revived
+- To make the Holt fight beatable, you can always find V-Raptor in the Keymonite room in the
+  Digadigamid
 - Teams are not edited, because there are a ton of team files, and my experience from doing
   that FFC challenge hack is that it takes *forever* to do anything with them
 
