@@ -1,2 +1,2 @@
 # Fossil-Fighters-Randomizer
-A digsite and starter randomizer for FF1
+This is a digsite and starter randomizer for FF1.
