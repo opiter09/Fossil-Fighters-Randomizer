@@ -16,6 +16,8 @@ r = f.read()
 f.close()
 broken = list(r.replace(" ", "").replace("\n", "").split(","))
 broken = list(set(broken))
+if (broken == [""]):
+    broken = []
 broken = [int(x) for x in broken]
 for d in donate:
     try:
