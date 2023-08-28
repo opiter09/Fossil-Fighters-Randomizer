@@ -11,15 +11,31 @@ for d in donate:
     vivos[vivos.index(d)] = vivos[d]
     vivos[d] = d
 
-broken = [1, 8, 65]
-shift = [3, 10, 31, 40, 47, 79, 90, 96]
+f = open("broken.txt", "rt")
+r = f.read()
+f.close()
+broken = list(r.replace(" ", "").replace("\n", "").split(","))
+broken = list(set(broken))
+broken = [int(x) for x in broken]
+for d in donate:
+    try:
+        broken.remove(d)
+    except:
+        pass
+
+shift = [1, 3, 10, 31, 40, 47, 79, 90, 96, 16, 34, 49, 57, 84, 91, 95, 97]
+for b in broken:
+    try:
+        shift.remove(b)
+    except:
+        pass
 for i in shift:
     if (vivos[i] in broken):
         x = vivos[i]
         y = vivos[vivos[i]]
         vivos[i] = y
         vivos[x] = x
-for i in range(len(broken)):
+for i in range(min(len(broken), len(shift))):
     ind = vivos.index(broken[i])
     x = vivos[ind]
     y = vivos[shift[i]]

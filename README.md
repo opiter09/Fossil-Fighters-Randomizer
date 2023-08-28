@@ -7,10 +7,11 @@ Features:
   of the digsite selection menu during Chapter 1, the game will freeze
 - You can only dig up the main 100
 - Vivos are matched 1-to-1, so nothing is impossible to get
-- Your starter cannot be Spinax or water-type, nor in "broken" (see below)
-- The three vivosaurs listed in "broken" in the Python code only appear post-game.
-  These are Lambeo, Guan, and T-Rex. All you need to do to change this is edit broken, which
-  can only have up to 8 items. The values are their Numbers, of course
+- Your starter cannot be Spinax or water-type, nor someone from broken.txt (see below)
+- The three vivosaurs listed in the file broken.txt in this folder only appear post-game.
+  These are Lambeo, Guan, and T-Rex. All you need to do to change this is edit broken.txt,
+  making sure to use the vivosaurs Numbers, and separating each by a comma and any number of
+  spaces. Also, all entries after the 17th will be ignored
 - You will never be able to dig up Tryma or the DP vivosaurs. This is because I cannot find
   where it says what they are, and I want to ensure all 100 vivosaurs can always be revived
 - To make the Holt fight beatable, you can always find V-Raptor in the Keymonite room in the
@@ -21,4 +22,4 @@ Features:
   the only oddity, but who knows
 
 Also, you download this by pressing the green "Code" button and choosing "Download ZIP," and
-you run it by dragging and dropping an FF1 ROM onto randomize.bat.
+you run it by dragging and dropping an FF1 ROM onto randomize.exe.
