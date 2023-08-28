@@ -32,7 +32,7 @@ for i in range(len(broken)):
    
 water = [ 7, 5, 35, 57, 91, 100, 16, 24, 33, 87, 86, 53, 85, 97, 62, 37, 95, 88, 72, 89, 34, 36, 73 ]
 starter = list(range(1, 101))
-for i in (broken + water + [20]):
+for i in (donate + broken + water + [20]):
     starter.remove(i)
 starterRes = random.choice(starter)
 
