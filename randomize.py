@@ -6,9 +6,11 @@ import sys
 
 vivos = list(range(1, 101))
 random.shuffle(vivos)
+vivos = [0] + vivos
 donate = [51, 80, 19, 22, 98]
 for d in donate:
-    vivos[vivos.index(d)] = vivos[d]
+    x = vivos.index(d)
+    vivos[x] = vivos[d]
     vivos[d] = d
 
 f = open("broken.txt", "rt")
@@ -44,9 +46,9 @@ for i in range(min(len(broken), len(shift))):
     vivos[ind] = y
     vivos[shift[i]] = x
 
-# for b in (donate + broken):
-    # print(vivos.index(b))
-    # print(vivos.count(b))
+# for b in (donate + broken + [29]):
+    # print("This is " + str(b))
+    # print("It is at " + str(vivos.index(b)))
    
 water = [ 7, 5, 35, 57, 91, 100, 16, 24, 33, 87, 86, 53, 85, 97, 62, 37, 95, 88, 72, 89, 34, 36, 73 ]
 starter = list(range(1, 101))
@@ -76,13 +78,14 @@ for root, dirs, files in os.walk("NDS_UNPACK/data/map/m/bin"):
             f.close()
             f = open(os.path.join(root, file), "ab")
             mapN = os.path.join(root, file).split("\\")[-2]
+            numTables = int.from_bytes(r[0x50:0x54], "little")
             point = int.from_bytes(r[0x54:0x58], "little")
-            realP = [ int.from_bytes(r[point:(point + 4)], "little") ]
-            loc = point + 4
-            while (realP[-1] > 0):
+            realP = []
+            loc = point
+            for i in range(numTables):
                 realP.append(int.from_bytes(r[loc:(loc + 4)], "little"))
                 loc = loc + 4
-            realP[-1] = len(r)
+            realP.append(len(r))
             f.write(r[0:realP[0]])
             for val in realP[0:-1]:
                 index = int.from_bytes(r[(val + 4):(val + 8)], "little")
@@ -105,7 +108,7 @@ for root, dirs, files in os.walk("NDS_UNPACK/data/map/m/bin"):
                         if (mapN == "0037"):
                             f.write((29).to_bytes(4, "little"))
                         else:
-                            f.write(vivos[vivoNum - 1].to_bytes(4, "little"))
+                            f.write(vivos[vivoNum].to_bytes(4, "little"))
                         f.write(r[(val + point4 + 4):(val + point4 + 32)])
                         if (i == (numSpawns - 1)) and ((val + point4 + 32) < realP[realP.index(val) + 1]):
                             f.write(r[(val + point4 + 32):realP[realP.index(val) + 1]])
