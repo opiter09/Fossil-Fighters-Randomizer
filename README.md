@@ -1,5 +1,5 @@
 # Fossil-Fighters-Randomizer
-This is a digsite and starter randomizer for FF1.
+This is a digsite, starter, and teams randomizer for FF1.
 
 Features:
 - This mod uses event-editing shenanigans to make it so you cannot go to the Trial Dig Site,
@@ -16,10 +16,11 @@ Features:
   where it says what they are, and I want to ensure all 100 vivosaurs can always be revived
 - To make the Holt fight beatable, you can always find V-Raptor in the Keymonite room in the
   Digadigamid
-- Teams are not edited, because there are a ton of team files, and my experience from doing
-  that FFC challenge hack is that it takes *forever* to do anything with them
 - No text is altered. The thing saying you got a "Spinax dino medal" at the beginning should
   be the only oddity, but who knows
+- Teams are not matched 1-to-1, for maximum chaos. They also edit only the vivosaur, not their
+  levels or numbers of moves
+- If you randomize teams, your starter can be Water-type, because who cares then
 
 Also, you download this by pressing the green "Code" button and choosing "Download ZIP," and
 you run it by dragging and dropping an FF1 ROM onto randomize.exe. You MUST put the ROM in
