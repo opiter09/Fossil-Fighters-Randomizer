@@ -20,6 +20,7 @@ Features:
   be the only oddity, but who knows
 - Teams are not matched 1-to-1, for maximum chaos. They also edit only the vivosaur, not their
   levels or numbers of moves
+- Legendaries are not altered, nor can anything be turned into them
 - If you randomize teams, your starter can be Water-type, because who cares then
 
 Also, you download this by pressing the green "Code" button and choosing "Download ZIP," and
