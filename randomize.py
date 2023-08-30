@@ -190,6 +190,7 @@ if (good == 1):
         shutil.rmtree("NDS_UNPACK/data/battle/bin/")
         
     subprocess.run([ "dslazy.bat", "PACK", "out.nds" ])
+    subprocess.run([ "xdelta3-3.0.11-x86_64.exe", "-e", "-f", "-s", sys.argv[1], "out.nds", "out.xdelta" ])
 
 
     

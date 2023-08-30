@@ -3,3 +3,4 @@ NDS_UNPACK*
 *.nds
 *.sav
 *.mch
+out.xdelta
