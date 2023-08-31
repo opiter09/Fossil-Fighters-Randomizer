@@ -51,9 +51,10 @@ if (good == 1):
 
     broken = list(brokenR.replace(" ", "").replace("\n", "").split(","))
     broken = list(set(broken))
-    if (broken == [""]):
+    try:
+        broken = [ max(1, min(100, int(x))) for x in broken ]
+    except:
         broken = []
-    broken = [int(x) for x in broken]
     for d in donate:
         try:
             broken.remove(d)
