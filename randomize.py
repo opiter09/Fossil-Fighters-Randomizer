@@ -6,14 +6,18 @@ import sys
 import PySimpleGUI as psg
 
 layout = [
-    [ psg.Text("Randomize Fossils?"), psg.Button("Yes", key = "dig", size = 5) ],
-    [ psg.Text("Randomize Starter?"), psg.Button("Yes", key = "start", size = 5) ],
-    [ psg.Text("Randomize Teams?"), psg.Button("No", key = "team", size = 5) ],
+    [ psg.Text("Randomize Fossils?", size = 17), psg.Button("Yes", key = "dig", size = 5) ],
+    [ psg.Text("Randomize Starter?", size = 17), psg.Button("Yes", key = "start", size = 5) ],
+    [ psg.Text("Randomize Teams?", size = 17), psg.Button("No", key = "team", size = 5) ],
+    [ psg.Text("Post-Game Vivos:", size = 17), psg.Input(default_text = "1, 8, 65", key = "broken", size = 20, enable_events = True) ],
+    [ psg.Text("Team Level Change:", size = 17), psg.Input(default_text = "0", key = "level", size = 5, enable_events = True) ],
     [ psg.Button("Run") ]
 ]
 window = psg.Window("", layout, grab_anywhere = True, resizable = True, font = "-size 12")
 good = 0
 res = { "dig": "Yes", "start": "Yes", "team": "No" }
+brokenR = ""
+levelR = 0
 while True:
     event, values = window.read()
     # See if user wants to quit or window was closed
@@ -27,6 +31,12 @@ while True:
         res[event] = new
     elif (event == "Run"):
         good = 1
+        brokenR = values["broken"]
+        levelR = values["level"]
+        try:
+            levelR = int(levelR)
+        except:
+            levelR = 0
         break
     
 if (good == 1):
@@ -39,10 +49,7 @@ if (good == 1):
         vivos[x] = vivos[d]
         vivos[d] = d
 
-    f = open("broken.txt", "rt")
-    r = f.read()
-    f.close()
-    broken = list(r.replace(" ", "").replace("\n", "").split(","))
+    broken = list(brokenR.replace(" ", "").replace("\n", "").split(","))
     broken = list(set(broken))
     if (broken == [""]):
         broken = []
@@ -161,7 +168,7 @@ if (good == 1):
             "NDS_UNPACK/data/episode/e0047" ])
         shutil.rmtree("NDS_UNPACK/data/episode/bin/")
     
-    if (res["team"] == "Yes"):
+    if ((res["team"] == "Yes") or (levelR != 0)):
         subprocess.run([ "fftool.exe", "NDS_UNPACK/data/battle" ])
         for root, dirs, files in os.walk("NDS_UNPACK/data/battle/bin"):
             for file in files:
@@ -178,12 +185,27 @@ if (good == 1):
                         f.write(r[0:0x94])
                         for i in range(numVivos):
                             vivoNum = int.from_bytes(r[(0x94 + (i * 12)):(0x94 + (i * 12) + 4)], "little")
-                            if (vivoNum in list(range(1, 101))):
+                            if ((vivoNum in list(range(1, 101))) and (res["team"] == "Yes")):
                                 f.write(random.randint(1, 100).to_bytes(4, "little"))
-                                f.write(r[(0x94 + (i * 12) + 4):(0x94 + (i * 12) + 12)])
                             else:
-                                f.write(r[(0x94 + (i * 12)):(0x94 + (i * 12) + 12)])
-                        f.write(r[(0x94 + (numVivos * 12)):])
+                                f.write(r[(0x94 + (i * 12)):(0x94 + (i * 12) + 4)])
+                            if ((levelR != 0) and (mapN != "0023")):
+                                oldLevel = int.from_bytes(r[(0x94 + (i * 12) + 4):(0x94 + (i * 12) + 8)], "little")
+                                newLevel = max(1, min(oldLevel + levelR, 12))
+                                f.write(newLevel.to_bytes(4, "little"))
+                            else:
+                                f.write(r[(0x94 + (i * 12) + 4):(0x94 + (i * 12) + 8)])
+                            f.write(r[(0x94 + (i * 12) + 8):(0x94 + (i * 12) + 12)])
+                        f.write(r[(0x94 + (numVivos * 12)):(0x94 + (numVivos * 12) + (numVivos * 8))])
+                        if ((levelR != 0) and (mapN != "0023")):
+                            moveMap = [ 0, 1, 1, 2, 2, 3, 3, 4, 4, 4, 4, 4, 4 ]
+                            for i in range(numVivos):
+                                oldLevel = int.from_bytes(r[(0x94 + (i * 12) + 4):(0x94 + (i * 12) + 8)], "little")
+                                newLevel = max(1, min(oldLevel + levelR, 12))
+                                f.write(moveMap[newLevel].to_bytes(4, "little"))
+                        else:
+                            f.write(r[(0x94 + (numVivos * 12) + (numVivos * 8)):(0x94 + (numVivos * 12) + (numVivos * 12))])
+                        f.write(r[(0x94 + (numVivos * 12) + (numVivos * 12)):])
                         f.close()
                         subprocess.run([ "fftool.exe", "compress", "NDS_UNPACK/data/battle/bin/" + mapN, "-i", "0.bin", "-o",
                             "NDS_UNPACK/data/battle/" + mapN ])

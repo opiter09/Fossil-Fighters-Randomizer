@@ -7,10 +7,10 @@ Features:
   of the digsite selection menu during Chapter 1, the game will freeze
 - You can only dig up the main 100
 - Vivos are matched 1-to-1, so nothing is impossible to get
-- Your starter cannot be Spinax or water-type, nor someone from broken.txt (see below)
-- The three vivosaurs listed in the file broken.txt in this folder only appear post-game.
-  These are Lambeo, Guan, and T-Rex. All you need to do to change this is edit broken.txt,
-  making sure to use the vivosaurs Numbers, and separating each by a comma and any number of
+- Your starter cannot be Spinax or water-type, nor someone from Post-Game Vivos (see below)
+- The three vivosaurs listed in the box Post-Game Vivos, naturally, only appear post-game.
+  These are Lambeo, Guan, and T-Rex. All you need to do to change this is edit the text input,
+  making sure to use the vivosaurs' Numbers, and separating each by a comma and any number of
   spaces. Also, all entries after the 17th will be ignored
 - You will never be able to dig up Tryma or the DP vivosaurs. This is because I cannot find
   where it says what they are, and I want to ensure all 100 vivosaurs can always be revived
@@ -20,6 +20,9 @@ Features:
   be the only oddity, but who knows
 - Teams are not matched 1-to-1, for maximum chaos. They also edit only the vivosaur, not their
   levels or numbers of moves
+- For that, use the "Team Level Change" box. This is additive, properly clamped to 1/12, and
+  ignores any input that is not an integer (but negative ones are fine). Also the moves
+  correspond to the levels properly (sorry Rex fans)
 - Legendaries are not altered, nor can anything be turned into them
 - If you randomize teams, your starter can be Water-type, because who cares then
 
