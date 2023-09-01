@@ -8,7 +8,7 @@ import PySimpleGUI as psg
 layout = [
     [ psg.Text("Randomize Fossils?", size = 17), psg.Button("Yes", key = "dig", size = 5) ],
     [ psg.Text("Randomize Starter?", size = 17), psg.Button("Yes", key = "start", size = 5) ],
-    [ psg.Text("Randomize Teams?", size = 17), psg.Button("No", key = "team", size = 5) ],
+    # [ psg.Text("Randomize Teams?", size = 17), psg.Button("No", key = "team", size = 5) ],
     [ psg.Text("Post-Game Vivos:", size = 17), psg.Input(default_text = "1, 8, 65", key = "broken", size = 20, enable_events = True) ],
     [ psg.Text("Team Level Change:", size = 17), psg.Input(default_text = "0", key = "level", size = 5, enable_events = True) ],
     [ psg.Button("Run") ]
@@ -198,7 +198,7 @@ if (good == 1):
                                 f.write(r[(0x94 + (i * 12) + 4):(0x94 + (i * 12) + 8)])
                             f.write(r[(0x94 + (i * 12) + 8):(0x94 + (i * 12) + 12)])
                         f.write(r[(0x94 + (numVivos * 12)):(0x94 + (numVivos * 12) + (numVivos * 8))])
-                        if ((levelR != 0) and (mapN != "0023")):
+                        if False: # ((levelR != 0) and (mapN != "0023")):
                             moveMap = [ 0, 1, 1, 2, 2, 3, 3, 4, 4, 4, 4, 4, 4 ]
                             for i in range(numVivos):
                                 oldLevel = int.from_bytes(r[(0x94 + (i * 12) + 4):(0x94 + (i * 12) + 8)], "little")

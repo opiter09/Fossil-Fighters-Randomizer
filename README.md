@@ -18,16 +18,9 @@ Features:
   Digadigamid
 - No text is altered. The thing saying you got a "Spinax dino medal" at the beginning should
   be the only oddity, but who knows
-- Teams are not matched 1-to-1, for maximum chaos. They also edit only the vivosaur, not their
-  levels or numbers of moves
-- For that, use the "Team Level Change" box. This is additive, properly clamped to 1/12, and
-  ignores any input that is not an integer (but negative ones are fine). Also the moves
-  correspond to the levels properly (sorry Rex fans), and Travers is ignored for obvious
-  reasons
-- Also, weird AI quirk, it seems vivos given extra moves cannot use them. Research into this
-  is ongoing, and it may take a while to figure out
-- Legendaries on teams are not altered, nor can anything be turned into them
-- If you randomize teams, your starter can be Water-type, because who cares then
+- Changing enemies' levels does not change how many moves they have. The code for this, like
+  the ability to randomize teams, is here but dummied out, due to problems with the very
+  hardcoded AI files
 
 Also, you download this by pressing the green "Code" button and choosing "Download ZIP," and
 you run it by dragging and dropping an FF1 ROM onto randomize.exe. You MUST put the ROM in
