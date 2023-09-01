@@ -24,7 +24,9 @@ Features:
   ignores any input that is not an integer (but negative ones are fine). Also the moves
   correspond to the levels properly (sorry Rex fans), and Travers is ignored for obvious
   reasons
-- Legendaries are not altered, nor can anything be turned into them
+- Also, weird AI quirk, it seems vivos given extra moves cannot use them. Research into this
+  is ongoing, and it may take a while to figure out
+- Legendaries on teams are not altered, nor can anything be turned into them
 - If you randomize teams, your starter can be Water-type, because who cares then
 
 Also, you download this by pressing the green "Code" button and choosing "Download ZIP," and
