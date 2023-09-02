@@ -1,5 +1,5 @@
 # Fossil-Fighters-Randomizer
-This is a digsite, starter, and teams randomizer for FF1.
+This is a digsite, starter, and (not now but hopefully in the future) teams randomizer for FF1.
 
 Features:
 - This mod uses event-editing shenanigans to make it so you cannot go to the Trial Dig Site,
