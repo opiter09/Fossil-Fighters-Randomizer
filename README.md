@@ -25,3 +25,6 @@ Features:
 Also, you download this by pressing the green "Code" button and choosing "Download ZIP," and
 you run it by dragging and dropping an FF1 ROM onto randomize.exe. You MUST put the ROM in
 the same folder as the exe, or it won't work.
+
+Finally, this normally only works on Windows. For Mac and Linux, I can only point you to
+WINE: https://www.winehq.org
