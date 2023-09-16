@@ -126,11 +126,12 @@ if (good == 1):
                             f.write(r[val:realP[realP.index(val) + 1]])
                             continue
                         else:
-                            f.write(r[val:(val + 12)])
+                            f.write(r[val:(val + 8)])
                             if (mapN == "0037"):
+                                f.write((0x6F).to_bytes(4, "little"))
                                 f.write((3).to_bytes(4, "little"))
                             else:
-                                f.write(r[(val + 12):(val + 16)])
+                                f.write(r[(val + 8):(val + 16)])
                             f.write(r[(val + 16):(val + 0x2C)])
                             numSpawns = int.from_bytes(r[(val + 0x28):(val + 0x2C)], "little")
                             point3 = int.from_bytes(r[(val + 0x2C):(val + 0x30)], "little")
