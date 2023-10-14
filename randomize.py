@@ -9,13 +9,15 @@ layout = [
     [ psg.Text("Randomize Fossils?", size = 17), psg.Button("Yes", key = "dig", size = 5) ],
     [ psg.Text("Randomize Starter?", size = 17), psg.Button("Yes", key = "start", size = 5) ],
     # [ psg.Text("Randomize Teams?", size = 17), psg.Button("No", key = "team", size = 5) ],
+    [ psg.Text("GP Starter Fossils?", size = 17), psg.Button("No", key = "green", size = 5) ],
+    [ psg.Text("Custom Starter:", size = 17), psg.Input(default_text = "", key = "custom", size = 5, enable_events = True) ],
     [ psg.Text("Post-Game Vivos:", size = 17), psg.Input(default_text = "1, 8, 65", key = "broken", size = 20, enable_events = True) ],
     [ psg.Text("Team Level Change:", size = 17), psg.Input(default_text = "0", key = "level", size = 5, enable_events = True) ],
     [ psg.Button("Run") ]
 ]
 window = psg.Window("", layout, grab_anywhere = True, resizable = True, font = "-size 12")
 good = 0
-res = { "dig": "Yes", "start": "Yes", "team": "No" }
+res = { "dig": "Yes", "start": "Yes", "team": "No", "green": "No" }
 brokenR = ""
 levelR = 0
 while True:
@@ -24,7 +26,7 @@ while True:
     if (event == psg.WINDOW_CLOSED) or (event == "Quit"):
         good = 0
         break
-    elif (event in ["dig", "start", "team"]):
+    elif (event in res.keys()):
         x = ["No", "Yes"]
         new = x[int(not x.index(window[event].get_text()))]
         window[event].update(new)
@@ -33,6 +35,7 @@ while True:
         good = 1
         brokenR = values["broken"]
         levelR = values["level"]
+        customR = values["custom"]
         try:
             levelR = int(levelR)
         except:
@@ -88,18 +91,34 @@ if (good == 1):
     for i in combined:
         starter.remove(i)
     starterRes = random.choice(starter)
+    
+    try:
+        custom = max(1, min(100, int(customR)))
+    except:
+        custom = ""
+    if (custom != ""):
+        starterRes = custom
+
+    if (res["green"] == "Yes"):
+        if (res["dig"] == "No"):
+            vivos = list(range(101))
+        x = vivos.index(starterRes)
+        y = vivos[20]
+        vivos[x] = y
+        vivos[20] = starterRes
 
     try:
         shutil.rmtree("NDS_UNPACK")
     except:
         pass
     subprocess.run([ "dslazy.bat", "UNPACK", sys.argv[1] ])
-    subprocess.run([ "xdelta3-3.0.11-x86_64.exe", "-d", "-f", "-s", "NDS_UNPACK/data/episode/e0102", "output_e0102.xdelta",
-        "NDS_UNPACK/data/episode/e0102x" ])
-    os.remove("NDS_UNPACK/data/episode/e0102")
-    os.rename("NDS_UNPACK/data/episode/e0102x", "NDS_UNPACK/data/episode/e0102")
     
-    if (res["dig"] == "Yes"):
+    if ((res["dig"] == "Yes") or (res["green"] == "Yes")):
+        subprocess.run([ "xdelta3-3.0.11-x86_64.exe", "-d", "-f", "-s", "NDS_UNPACK/data/episode/e0102", "output_e0102.xdelta",
+            "NDS_UNPACK/data/episode/e0102x" ])
+        os.remove("NDS_UNPACK/data/episode/e0102")
+        os.rename("NDS_UNPACK/data/episode/e0102x", "NDS_UNPACK/data/episode/e0102")
+
         subprocess.run([ "fftool.exe", "NDS_UNPACK/data/map/m" ])
         for root, dirs, files in os.walk("NDS_UNPACK/data/map/m/bin"):
             for file in files:
