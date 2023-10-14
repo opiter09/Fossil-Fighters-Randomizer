@@ -9,7 +9,7 @@ layout = [
     [ psg.Text("Randomize Fossils?", size = 17), psg.Button("Yes", key = "dig", size = 5) ],
     [ psg.Text("Randomize Starter?", size = 17), psg.Button("Yes", key = "start", size = 5) ],
     # [ psg.Text("Randomize Teams?", size = 17), psg.Button("No", key = "team", size = 5) ],
-    [ psg.Text("GP Starter Fossils?", size = 17), psg.Button("No", key = "green", size = 5) ],
+    [ psg.Text("GP Starter Fossils?", size = 17), psg.Button("Yes", key = "green", size = 5) ],
     [ psg.Text("Custom Starter:", size = 17), psg.Input(default_text = "", key = "custom", size = 5, enable_events = True) ],
     [ psg.Text("Post-Game Vivos:", size = 17), psg.Input(default_text = "1, 8, 65", key = "broken", size = 20, enable_events = True) ],
     [ psg.Text("Team Level Change:", size = 17), psg.Input(default_text = "0", key = "level", size = 5, enable_events = True) ],
@@ -17,7 +17,7 @@ layout = [
 ]
 window = psg.Window("", layout, grab_anywhere = True, resizable = True, font = "-size 12")
 good = 0
-res = { "dig": "Yes", "start": "Yes", "team": "No", "green": "No" }
+res = { "dig": "Yes", "start": "Yes", "team": "No", "green": "Yes" }
 brokenR = ""
 levelR = 0
 while True:
