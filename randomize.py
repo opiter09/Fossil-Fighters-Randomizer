@@ -170,7 +170,7 @@ if (good == 1):
                         "NDS_UNPACK/data/map/m/" + mapN ])
         shutil.rmtree("NDS_UNPACK/data/map/m/bin/")
     
-    if (res["start"] == "Yes"):
+    if ((res["start"] == "Yes") or (custom != "")):
         subprocess.run([ "fftool.exe", "NDS_UNPACK/data/episode/e0047" ])
         f = open("NDS_UNPACK/data/episode/bin/e0047/0.bin", "rb")
         r = f.read()
