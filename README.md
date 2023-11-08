@@ -19,7 +19,8 @@ Features:
 - You will never be able to dig up Tryma or the DP vivosaurs. This is because I cannot find
   where it says what they are, and I want to ensure all 100 vivosaurs can always be revived
 - To make the Holt fight beatable, you can always find V-Raptor in the Keymonite room in the
-  Digadigamid
+  Digadigamid. IMPORTANT: For technical reasons, these fossils will ONLY appear if you have
+  neither fossil chip
 - No text is altered. The thing saying you got a "Spinax dino medal" at the beginning should
   be the only oddity, but who knows
 - Changing enemies' levels does not change how many moves they have. The code for this, like
