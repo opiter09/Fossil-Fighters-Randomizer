@@ -33,3 +33,10 @@ the same folder as the exe, or it won't work.
 
 Finally, this normally only works on Windows. For Mac and Linux, I can only point you to
 WINE: https://www.winehq.org
+
+# Source Codes
+- NitroPaint:  https://github.com/Garhoogin/NitroPaint/releases
+- FFTool: https://github.com/jianmingyong/Fossil-Fighters-Tool
+- NDSTool: https://github.com/devkitPro/ndstool (this is a later version; the one used here came without a license as part of DSLazy)
+- xdelta: https://github.com/jmacd/xdelta-gpl
+
