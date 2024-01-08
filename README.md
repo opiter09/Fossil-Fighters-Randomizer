@@ -26,11 +26,10 @@ Features:
 - Changing enemies' levels does not change how many moves they have. The code for this, like
   the ability to randomize teams, is here but dummied out, due to problems with the very
   hardcoded AI files
-  
-WARNING: Crashes have been known to occur when digging up fossils in the Pirate Ship. Due to
-difficulties with resolving the problem, it is currently recommended to simply avoid digging
-in the area if possible. If you really want to be completionist about it, though, just make
-sure to save often.
+- Captain Travers' team is unaffected (because raising his level would be unfair), as are the
+  underground fighters of Bottomsum Bay and the Pirate Ship (because they are known to crashes,
+  presumably due to the data being in a different spot)
+
 
 Also, you download this by pressing the green "Code" button and choosing "Download ZIP," and
 you run it by dragging and dropping an FF1 ROM onto randomize.exe. You MUST put the ROM in

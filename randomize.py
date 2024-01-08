@@ -205,15 +205,17 @@ if (good == 1):
                         f.close()
                         f = open(os.path.join(root, file), "ab")
                         mapN = os.path.join(root, file).split("\\")[-2]
+                        forbid = [ "0023", "0258", "0259", "0260", "0261", "0262", "0263", "0264", "0265", "0266", "0267", "0268",
+                             "0269", "0270", "0271", "072", "0273", "0274", "0275" ]
                         numVivos = r[0x5C]
                         f.write(r[0:0x94])
                         for i in range(numVivos):
                             vivoNum = int.from_bytes(r[(0x94 + (i * 12)):(0x94 + (i * 12) + 4)], "little")
-                            if ((vivoNum in list(range(1, 101))) and (res["team"] == "Yes")):
+                            if ((vivoNum in list(range(1, 101))) and (res["team"] == "Yes") and (mapN not in forbid)):
                                 f.write(random.randint(1, 100).to_bytes(4, "little"))
                             else:
                                 f.write(r[(0x94 + (i * 12)):(0x94 + (i * 12) + 4)])
-                            if ((levelR != 0) and (mapN != "0023")):
+                            if ((levelR != 0) and (mapN not in forbid)):
                                 oldLevel = int.from_bytes(r[(0x94 + (i * 12) + 4):(0x94 + (i * 12) + 8)], "little")
                                 newLevel = max(1, min(oldLevel + levelR, 12))
                                 f.write(newLevel.to_bytes(4, "little"))
@@ -221,7 +223,7 @@ if (good == 1):
                                 f.write(r[(0x94 + (i * 12) + 4):(0x94 + (i * 12) + 8)])
                             f.write(r[(0x94 + (i * 12) + 8):(0x94 + (i * 12) + 12)])
                         f.write(r[(0x94 + (numVivos * 12)):(0x94 + (numVivos * 12) + (numVivos * 8))])
-                        if False: # ((levelR != 0) and (mapN != "0023")):
+                        if False: # ((levelR != 0) and (mapN not in forbid)):
                             moveMap = [ 0, 1, 1, 2, 2, 3, 3, 4, 4, 4, 4, 4, 4 ]
                             for i in range(numVivos):
                                 oldLevel = int.from_bytes(r[(0x94 + (i * 12) + 4):(0x94 + (i * 12) + 8)], "little")
