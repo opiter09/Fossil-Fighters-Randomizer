@@ -26,9 +26,6 @@ Features:
 - Changing enemies' levels does not change how many moves they have. The code for this, like
   the ability to randomize teams, is here but dummied out, due to problems with the very
   hardcoded AI files
-- Captain Travers' team is unaffected (because raising his level would be unfair), as are the
-  underground fighters of Bottomsum Bay and the Pirate Ship (because they are known to crashes,
-  presumably due to the data being in a different spot)
 
 
 Also, you download this by pressing the green "Code" button and choosing "Download ZIP," and
