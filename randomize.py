@@ -233,8 +233,8 @@ if (good == 1):
                             f.write(r[(0x94 + shift + (numVivos * 12) + (numVivos * 8)):(0x94 + shift + (numVivos * 12) + (numVivos * 12))])
                         f.write(r[(0x94 + shift + (numVivos * 12) + (numVivos * 12)):])
                         f.close()
-                        subprocess.run([ "fftool.exe", "compress", "NDS_UNPACK/data/battle/bin/" + mapN, "-i", "0.bin", "-o",
-                            "NDS_UNPACK/data/battle/" + mapN ])
+                        subprocess.run([ "fftool.exe", "compress", "NDS_UNPACK/data/battle/bin/" + mapN, "-c", "None", "-c",
+                        "None", "-i", "0.bin", "-o", "NDS_UNPACK/data/battle/" + mapN ])
         shutil.rmtree("NDS_UNPACK/data/battle/bin/")
         
     subprocess.run([ "dslazy.bat", "PACK", "out.nds" ])
