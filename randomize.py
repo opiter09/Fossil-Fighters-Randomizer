@@ -5,6 +5,65 @@ import random
 import sys
 import PySimpleGUI as psg
 
+def digsiteOutput():
+    text = open("ff1_digsiteOutput.txt", "wt")
+    text.close()
+    text = open("ff1_digsiteOutput.txt", "at")
+    for root, dirs, files in os.walk("NDS_UNPACK/data/map/m/bin"):
+        for file in files:
+            if (file == "0.bin"):
+                f = open(os.path.join(root, file), "rb")
+                r = f.read()
+                f.close()
+                point = int.from_bytes(r[0x54:0x58], "little")
+                mapN = os.path.join(root, file).split("\\")[-2]
+                mf = open("Map IDs.txt", "rt")
+                lines = list(mf.read().split("\n")).copy()
+                for t in lines:
+                    if (t != ""):
+                        nums = list(t.split(":")[0].replace(", ", ",").split(",")).copy()
+                        for n in nums:
+                            if (int(mapN.split(" [")[0]) == int(n)):
+                                mapN = mapN + " [" + t.split(": ")[1] + "]"
+                f = open("ff1_vivoNames.txt", "rt")
+                vivoNames = [""] + list(f.read().split("\n")).copy()
+                f.close()
+                realP = [ int.from_bytes(r[point:(point + 4)], "little") ]
+                loc = point + 4
+                while (realP[-1] > 0):
+                    realP.append(int.from_bytes(r[loc:(loc + 4)], "little"))
+                    loc = loc + 4
+                realP = realP[0:-1]
+                check = 0
+                for val in realP:
+                    index = int.from_bytes(r[(val + 4):(val + 8)], "little")
+                    if (index == 0):
+                        continue
+                    else:
+                        if (check == 0):
+                            check = 1
+                            text.write(mapN + ":\n")
+                    text.write("Zone " + str(index).zfill(2) + ":\n")
+                    chip = int.from_bytes(r[(val + 8):(val + 12)], "little")
+                    if (chip in [0x6F, 0x70, 0x71]):
+                        chip = str(chip - 0x6F)
+                    else:
+                        chip = "?"
+                    maxFos = int.from_bytes(r[(val + 12):(val + 16)], "little")
+                    text.write("\tFossil Chips Needed: " + chip + "\n")
+                    text.write("\tMax Spawns: " + str(maxFos) + "\n")
+                    numSpawns = int.from_bytes(r[(val + 0x28):(val + 0x2C)], "little")
+                    point3 = int.from_bytes(r[(val + 0x2C):(val + 0x30)], "little")
+                    for i in range(numSpawns):
+                        point4 = int.from_bytes(r[(val + point3 + (i * 4)):(val + point3 + (i * 4) + 4)], "little")
+                        vivoNum = int.from_bytes(r[(val + point4):(val + point4 + 4)], "little")
+                        chance = int.from_bytes(r[(val + point4 + 4):(val + point4 + 8)], "little")
+                        text.write("\t" + "[0x" + hex(val + point4).upper()[2:] + "] " + vivoNames[vivoNum] + ": " + str(chance) + "%\n")
+                if (check == 1):
+                    text.write("\n")
+    text.close()
+
+
 layout = [
     [ psg.Text("Randomize Fossils?", size = 17), psg.Button("Yes", key = "dig", size = 5) ],
     [ psg.Text("Randomize Starter?", size = 17), psg.Button("Yes", key = "start", size = 5) ],
@@ -13,11 +72,12 @@ layout = [
     [ psg.Text("Custom Starter:", size = 17), psg.Input(default_text = "", key = "custom", size = 5, enable_events = True) ],
     [ psg.Text("Post-Game Vivos:", size = 17), psg.Input(default_text = "1, 8, 65", key = "broken", size = 20, enable_events = True) ],
     [ psg.Text("Team Level Change:", size = 17), psg.Input(default_text = "0", key = "level", size = 5, enable_events = True) ],
+    [ psg.Text("TLC on Nameless?", size = 17), psg.Button("Yes", key = "jewel", size = 5) ],
     [ psg.Button("Run") ]
 ]
 window = psg.Window("", layout, grab_anywhere = True, resizable = True, font = "-size 12")
 good = 0
-res = { "dig": "Yes", "start": "Yes", "team": "No", "green": "Yes" }
+res = { "dig": "Yes", "start": "Yes", "team": "No", "green": "Yes", "jewel": "Yes" }
 brokenR = ""
 levelR = 0
 while True:
@@ -171,6 +231,7 @@ if (good == 1):
                     f.close()
                     subprocess.run([ "fftool.exe", "compress", "NDS_UNPACK/data/map/m/bin/" + mapN, "-i", "0.bin", "-o",
                         "NDS_UNPACK/data/map/m/" + mapN ])
+        digsiteOutput()
         shutil.rmtree("NDS_UNPACK/data/map/m/bin/")
     
     if ((res["start"] == "Yes") or (custom != "")):
@@ -193,6 +254,10 @@ if (good == 1):
         shutil.rmtree("NDS_UNPACK/data/episode/bin/")
     
     if ((res["team"] == "Yes") or (levelR != 0)):
+        f = open("ff1_enemyNames.txt", "rt")
+        eNames = list(f.read().split("\n"))
+        f.close()
+
         subprocess.run([ "fftool.exe", "NDS_UNPACK/data/battle" ])
         for root, dirs, files in os.walk("NDS_UNPACK/data/battle/bin"):
             for file in files:
@@ -200,13 +265,14 @@ if (good == 1):
                     f = open(os.path.join(root, file), "rb")
                     r = f.read()
                     f.close()
-                    if (len(r) > 0x94):
+                    shift = int.from_bytes(r[8:12], "little") - 0x5C
+                    teamN = eNames[int.from_bytes(r[(0x64 + shift):(0x66 + shift)], "little") - 3362]
+                    if ((len(r) > 0x94) and ((res["jewel"] == "Yes") or (teamN != "Fossil Fighter"))):
                         f = open(os.path.join(root, file), "wb")
                         f.close()
                         f = open(os.path.join(root, file), "ab")
                         mapN = os.path.join(root, file).split("\\")[-2]
                         bpShift = int.from_bytes(r[4:8], "little")
-                        shift = int.from_bytes(r[8:12], "little") - 0x5C
                         numVivos = r[0x5C + shift]
                         f.write(r[0:(0x94 + shift)])
                         for i in range(numVivos):

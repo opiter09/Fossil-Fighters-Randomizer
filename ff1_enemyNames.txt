@@ -1,0 +1,261 @@
+Player Sample Name
+[Debug] Enemy Sample Name
+Test
+[Unused] Chutoru
+Tipper
+Holt
+Capt. Travers
+P.B. Jay
+Medal-Dealer Joe
+Wendy
+Eli
+Sally
+Holt
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+[Unused] Hidekazu
+Tony
+Tim
+Nate
+Nate
+Clare
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Holt
+Shady Guy
+Dog
+Long-Nosed Man
+Vivian
+Staff
+Staff
+Holt
+Nevada
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Steve
+Steve
+Amanda
+Tony
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Attendant
+Rex
+Snivels
+[Unused] Junko
+Holt
+Holt
+McJunker
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+[Unused] Junko
+[Unused] Hassan
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+BB Soldier
+BB Soldier
+Holt
+Rex
+Snivels
+Vivian
+Woolbeard
+Staff
+Staff
+Holt
+Nick Nack
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+[Unused] Satsuki
+[Unused] Frank
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+BB Soldier
+Rex
+Snivels
+Vivian
+BB Boss
+Dr. Diggins
+Jane
+Mrs. Riggle
+Holt
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+[Unused] Sasaki's Aunt
+[Unused] Grandma Ume
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+BB Soldier
+BB Soldier
+BB Soldier
+BB Soldier
+BB Soldier
+BB Soldier
+BB Soldier
+BB Soldier
+BB Soldier
+Duna
+Bullwort
+Bullwort
+Bullwort
+Westley
+Mr. Ozzlewit
+Holt
+Saurhead
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Westley
+[Unused] Takeda's Grandfather
+BB Soldier
+BB Soldier
+BB Soldier
+BB Soldier
+BB Soldier
+BB Soldier
+BB Soldier
+BB Soldier
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+[Saurhead] 1st
+[Saurhead] 2nd
+[Saurhead] 3rd
+[Saurhead] 4th
+[Unused] Sudden Death 5
+[Unused] Sudden Death 6
+[Unused] Sudden Death 7
+[Unused] Sudden Death 8
+[Unused] Sudden Death 9
+Saurhead
+Dinaurian
+Sally
+[Unused] Frank
+$p
+Raptin
+Dinaurian
+Dinaurian
+Dinaurian
+Dinaurian
+Dynal
+Guhnash
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+[Unused] Takeda's Grandfather
+[Unused] Satsuki
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Chip
+Dr. Diggins
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Rosie
+McJunker
+Vivian
+Snivels
+Rex
+Woolbeard
+Nevada
+Nick Nack
+Holt
+Samurai
+Saurhead
+Samurai
+Blambeau
+Blambeau
+Blambeau
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+Fossil Fighter
+[Unused] Tutorial 1
+[Unused] Tutorial 2
+[Unused] Tutorial 3
+Petey
+Petey
+[Saurhead] 1st
+[Saurhead] 2nd
+[Saurhead] 3rd
+Dynal
+Guhnash
+Guhnash
+Nevada
+Woolbeard
+Dynal
+Rex
+Snivels
+Vivian
+Saurhead
+Saurhead
+Saurhead
+Fossil Fighter
