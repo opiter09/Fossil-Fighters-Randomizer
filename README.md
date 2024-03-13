@@ -8,10 +8,11 @@ Features:
 - You can only dig up the main 100
 - Vivos are matched 1-to-1, so nothing is impossible to get
 - Your random starter cannot be Spinax or water-type, nor someone from Post-Game Vivos
-- The Starter in GP button force-swaps Spinax fossils and your starter's
-- The Custom Starter box must contain a single vivo Number, from 1 to 100, or it will do
+- The Custom Starter box must contain a single vivo Number, from 1 to 114, or it will do
   nothing. It also ignores the usual restrictions on DP vivos, Tryma, and Post-Game Vivos,
   so it is possible to make 100% completion impossible
+- The Starter in GP button force-swaps Spinax fossils and your starter's. If the starter is
+  custom and has a number over 100, it will force-swap Spinax and Chelon instead
 - The three vivosaurs listed in the box Post-Game Vivos, naturally, only appear post-game.
   These are Lambeo, Guan, and T-Rex. All you need to do to change this is edit the text input,
   making sure to use the vivosaurs' Numbers, and separating each by a comma and any number of

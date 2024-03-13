@@ -153,7 +153,7 @@ if (good == 1):
     starterRes = random.choice(starter)
     
     try:
-        custom = max(1, min(100, int(customR)))
+        custom = max(1, min(114, int(customR)))
     except:
         custom = ""
     if (custom != ""):
@@ -162,10 +162,10 @@ if (good == 1):
     if (res["green"] == "Yes"):
         if (res["dig"] == "No"):
             vivos = list(range(101))
-        x = vivos.index(starterRes)
+        x = vivos.index(min(100, starterRes))
         y = vivos[20]
         vivos[x] = y
-        vivos[20] = starterRes
+        vivos[20] = min(100, starterRes)
 
     try:
         shutil.rmtree("NDS_UNPACK")
@@ -243,7 +243,10 @@ if (good == 1):
         f.close()
         f = open("NDS_UNPACK/data/episode/bin/e0047/0.bin", "ab")
         f.write(r[0:0x8B4])
-        fossil = ((starterRes - 1) * 4) + 1
+        if (starterRes <= 100):
+            fossil = ((starterRes - 1) * 4) + 1
+        else:
+            fossil = 1
         f.write(fossil.to_bytes(2, "little"))
         f.write(r[0x8B6:0x9D0])
         f.write(starterRes.to_bytes(2, "little"))
