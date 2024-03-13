@@ -243,13 +243,10 @@ if (good == 1):
         f.close()
         f = open("NDS_UNPACK/data/episode/bin/e0047/0.bin", "ab")
         f.write(r[0:0x8B4])
-        if (starterRes <= 100):
-            fossil = ((starterRes - 1) * 4) + 1
-        else:
-            fossil = 1
+        fossil = ((starterRes - 1) * 4) + 1
         f.write(fossil.to_bytes(2, "little"))
         f.write(r[0x8B6:0x9D0])
-        f.write(starterRes.to_bytes(2, "little"))
+        f.write((min(100, starterRes)).to_bytes(2, "little"))
         f.write(r[0x9D2:])
         f.close()
         subprocess.run([ "fftool.exe", "compress", "NDS_UNPACK/data/episode/bin/e0047/", "-i", "0.bin", "-o",
