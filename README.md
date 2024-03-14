@@ -33,7 +33,6 @@ Features:
 If you would like to see the table of new spawns, see the "ff1_digsiteOutput.txt" the
 randomizer generates.
 
-
 Also, you download this by pressing the green "Code" button and choosing "Download ZIP," and
 you run it by dragging and dropping an FF1 ROM onto randomize.exe. You MUST put the ROM in
 the same folder as the exe, or it won't work.
