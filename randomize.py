@@ -167,10 +167,10 @@ if (good == 1):
         vivos[x] = y
         vivos[20] = min(100, starterRes)
 
-    try:
-        shutil.rmtree("NDS_UNPACK")
-    except:
-        pass
+    if (os.path.exists("NDS_UNPACK/y7.bin") == True):
+        shutil.rmtree("./NDS_UNPACK/")
+    if (os.path.exists("out.nds") == True):
+        os.remove("out.nds")
     subprocess.run([ "dslazy.bat", "UNPACK", sys.argv[1] ])
     
     if ((res["dig"] == "Yes") or (res["green"] == "Yes")):
