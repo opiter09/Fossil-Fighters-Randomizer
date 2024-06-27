@@ -33,8 +33,12 @@
 34, 35, 41: beta knotwood forest
 116: real knotwood forest
 117: digadig village
-36, 38, 39, 40: digadiagamid floors
+
+36: digadigamid 1F
 37: keymonite room
+38: digadigamid 2F
+39: digadigamid 3F
+40: digadigamid 4F
 
 42: rivet ravine
 43: RR tunnel 1 (ptd area)
