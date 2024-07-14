@@ -1,89 +1,63 @@
-7: junk depot
-9: fossil guild
-
-13: richmond building
-14: rosie's room
-15: richmond's office
-16: hallway to secret lab
-17: secret lab
-
-30: bullwort's office
-31: police station
-32: prison
-
-8: cleaning room
-10: diggin's room
-11, 12, 18, 84: fossil center main and side areas
-19: fossil center backroom (empty)
-97: fossil center backroom (pre-final battle)
-122: fossil center backroom (time machine)
-
-
-22: hotel lobby
-20, 23, 24, 25, 82, 83: misc. hotel rooms
-21: nick nack's room
-81: samurai room
-
-26, 27, 28: fossil stadium misc. rooms
-29: fossil stadium pre-battle room
-
-
-33: greenhorn plains
-
-34, 35, 41: beta knotwood forest
-116: real knotwood forest
-117: digadig village
-
-36: digadigamid 1F
-37: keymonite room
-38: digadigamid 2F
-39: digadigamid 3F
-40: digadigamid 4F
-
-42: rivet ravine
-43: RR tunnel 1 (ptd area)
-44, 45, 46: RR tunnels 2-4
-47: RR tunnel 5
-48: RR tunnel entrance
-
-49: parchment desert
-
-50: bottomsup bay
-51: woolbeards room
-52: outside pirate ship
-55, 56, 57, 58, 59, 89, 90, 91: pirate ship misc. rooms
-53, 54: BBay misc. holes
-
-60: bb base (outside/1F)
-61, 86, 87, 88: bb base floors 2F-5F
-62: bb base (top floor)
-
-63: coldfeet glacier
-
-64: ML main room, lava raised
-65: ML north room, lava raised
-66: ML northeast room
-67: ML main room, no lava
-68: ML north room, no lava
-69: ML northwest room
-
-70: starship entrance room
-71, 72, 92, 73: ship misc. hallways
-74: idolcomp room
-
-75: secret island/crashed starship
-76, 77, 78, 93, 79: SI misc. hallways
-80: raptin battle room
-
-121: trial dig site
-
-4, 5, 6: beta vivosaur island
-85: nighttime vivosaur island cutscene (?)
-94: inside guhnash
-95: violent crash, sometimes hard crashes desmume with interesting colors
-96: opening boat ride area
-98, 99: (relatively) small guhnash
-100: crash
-101, 102, 103, 104, 105, 106: RR mole tunnels
-107, 108, 109, 110, 111, 112, 113, 114, 115: a buggy version of the fossil stadium with no collision or loading zones, presumably by the name used solely for the sequence after a chapter is completed, when the player has the option to save and return to the title screen so that the map location will say "x chapter complete", because just saying "hotel" is very boring, go figure
-123: another buggy fossil stadium, possibly just used for testing
+0033: Greenhorn Plains
+0034: Beta Knotwood Forest
+0036: Digadigamid 1F
+0037: Digadigamid 1F Keymonite Room
+0038: Digadigamid 2F
+0039: Digadigamid 3F
+0040: Digadigamid 4F
+0042: Rivet Ravine
+0043: Tunnel #1
+0044: Tunnel #2
+0045: Tunnel #3
+0046: Tunnel #4
+0047: Tunnel #5
+0048: Tunnel Entrance
+0049: Parchment Desert
+0050: Bottomsup Bay
+0051: Woolbeard's Room
+0052: Bottomsup Bay Left Hole
+0053: Bottomsup Bay Middle Hole
+0054: Bottomsup Bay Right Hole
+0055: Pirate Ship 1F
+0056: Pirate Ship 2F
+0057: Pirate Ship 3F
+0058: Pirate Ship 1F Chest Room
+0059: Pirate Ship 1F Misc Room
+0060: BB Base 1F
+0061: BB Base 2F
+0062: BB Base 6F
+0063: Coldfeet Glacier
+0064: Mt. Lavaflow (Lava Raised)
+0065: Mt. Lavaflow N (Lava Raised)
+0066: Mt. Lavaflow NE (Lava Raised)
+0067: Mt. Lavaflow (No Lava)
+0068: Mt. Lavaflow N (No Lava)
+0069: Mt. Lavaflow NW
+0070: Starship 1
+0071: Starship 2
+0072: Starship 3
+0073: Starship 5
+0074: Starship Idolcomp Room
+0075: Secret Island
+0076: Crashed Starship 1
+0077: Crashed Starship 2
+0078: Crashed Starship 3
+0079: Crashed Starship 5
+0080: Crashed Starship 6
+0086: BB Base 3F
+0087: BB Base 4F
+0088: BB Base 5F
+0089: Pirate Ship 2F Chest Room
+0090: Pirate Ship 3F Chest Room
+0091: Pirate Ship 2F Misc Room
+0092: Starship 4
+0093: Crashed Starship 4
+0101: Tunnel #1 Cutscene
+0102: Secret Tunnel 1
+0103: Secret Tunnel 2
+0104: Tunnel #5 Cutscene
+0105: Secret Tunnel 3
+0106: Secret Tunnel 4
+0116: Knotwood Forest
+0117: Digadig Village
+0121: Trial Dig Site

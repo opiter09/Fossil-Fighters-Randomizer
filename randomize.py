@@ -43,22 +43,22 @@ def digsiteOutput():
                         if (check == 0):
                             check = 1
                             text.write(mapN + ":\n")
-                    text.write("Zone " + str(index).zfill(2) + ":\n")
+                    text.write("\tZone " + str(index).zfill(2) + ":\n")
                     chip = int.from_bytes(r[(val + 8):(val + 12)], "little")
                     if (chip in [0x6F, 0x70, 0x71]):
                         chip = str(chip - 0x6F)
                     else:
                         chip = "?"
                     maxFos = int.from_bytes(r[(val + 12):(val + 16)], "little")
-                    text.write("\tFossil Chips Needed: " + chip + "\n")
-                    text.write("\tMax Spawns: " + str(maxFos) + "\n")
+                    text.write("\t\tFossil Chips Needed: " + chip + "\n")
+                    text.write("\t\tMax Spawns: " + str(maxFos) + "\n")
                     numSpawns = int.from_bytes(r[(val + 0x28):(val + 0x2C)], "little")
                     point3 = int.from_bytes(r[(val + 0x2C):(val + 0x30)], "little")
                     for i in range(numSpawns):
                         point4 = int.from_bytes(r[(val + point3 + (i * 4)):(val + point3 + (i * 4) + 4)], "little")
                         vivoNum = int.from_bytes(r[(val + point4):(val + point4 + 4)], "little")
                         chance = int.from_bytes(r[(val + point4 + 4):(val + point4 + 8)], "little")
-                        text.write("\t" + "[0x" + hex(val + point4).upper()[2:] + "] " + vivoNames[vivoNum] + ": " + str(chance) + "%\n")
+                        text.write("\t\t" + "[0x" + hex(val + point4).upper()[2:] + "] " + vivoNames[vivoNum] + ": " + str(chance) + "%\n")
                 if (check == 1):
                     text.write("\n")
     text.close()
