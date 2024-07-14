@@ -61,3 +61,49 @@
 0116: Knotwood Forest
 0117: Digadig Village
 0121: Trial Dig Site
+
+
+
+118: Guild Area
+7: Junk Depot
+9: Fossil Guild
+
+13: Richmond Building
+14: Rosie's Room
+15: Richmond's Office
+16: Hallway To Secret Lab
+17: Secret Lab
+
+30: Bullwort's Office
+31: Police Station
+32: Prison
+
+119: Fighter Area
+8: Cleaning Room
+10: Diggin's Room
+11, 12, 18, 84: Fossil Center Main And Side Areas
+19: Fossil Center Backroom (Empty)
+97: Fossil Center Backroom (Pre-Final Battle)
+122: Fossil Center Backroom (Time Machine)
+
+
+120: Park Area
+22: Hotel Lobby
+20, 23, 24, 25, 82, 83: Misc. Hotel Rooms
+21: Nick Nack's Room
+81: Samurai Room
+
+26, 27, 28: Fossil Stadium Misc. Rooms
+29: Fossil Stadium Pre-Battle Room
+
+
+4, 5, 6: Beta Vivosaur Island
+85: Nighttime Vivosaur Island Cutscene (?)
+94: Inside Guhnash
+95: Violent Crash, Sometimes Hard Crashes Desmume With Interesting Colors
+96: Opening Boat Ride Area
+98, 99: (Relatively) Small Guhnash
+100: Crash
+101, 102, 103, 104, 105, 106: All Slight Variations On The Same Tunnel Map Used For Cutscenes Involving Minecarts
+107, 108, 109, 110, 111, 112, 113, 114, 115: A Buggy Version Of The Fossil Stadium With No Collision Or Loading Zones, Presumably By The Name Used Solely For The Sequence After A Chapter Is Completed, When The Player Has The Option To Save And Return To The Title Screen So That The Map Location Will Say "X Chapter Complete", Because Just Saying "Hotel" Is Very Boring, Go Figure
+123: Another Buggy Fossil Stadium, Possibly Just Used For Testing
