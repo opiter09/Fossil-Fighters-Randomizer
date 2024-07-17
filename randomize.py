@@ -3,7 +3,7 @@ import shutil
 import subprocess
 import random
 import sys
-import PySimpleGUI as psg
+import FreeSimpleGUI as psg
 
 def digsiteOutput():
     text = open("ff1_digsiteOutput.txt", "wt")
