@@ -104,6 +104,6 @@
 96: Opening Boat Ride Area
 98, 99: (Relatively) Small Guhnash
 100: Crash
-101, 102, 103, 104, 105, 106: All Slight Variations On The Same Tunnel Map Used For Cutscenes Involving Minecarts
+101, 102, 103, 104, 105, 106: Minecart Cutscene Maps
 107, 108, 109, 110, 111, 112, 113, 114, 115: A Buggy Version Of The Fossil Stadium With No Collision Or Loading Zones, Presumably By The Name Used Solely For The Sequence After A Chapter Is Completed, When The Player Has The Option To Save And Return To The Title Screen So That The Map Location Will Say "X Chapter Complete", Because Just Saying "Hotel" Is Very Boring, Go Figure
 123: Another Buggy Fossil Stadium, Possibly Just Used For Testing
