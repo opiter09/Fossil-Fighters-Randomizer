@@ -1,6 +1,8 @@
 # Fossil-Fighters-Randomizer
 This is a digsite, starter, and (not now but hopefully in the future) teams randomizer for FF1.
 
+You MUST put the ROM in the same folder as the exe, or it won't work.
+
 Features:
 - This mod uses event-editing shenanigans to make it so you cannot go to the Trial Dig Site,
   and you can go to Greenhorn right away. As a result of this, however, if you try to back out
@@ -34,8 +36,7 @@ If you would like to see the table of new spawns, see the "ff1_digsiteOutput.txt
 randomizer generates.
 
 Also, you download this by pressing the green "Code" button and choosing "Download ZIP," and
-you run it by dragging and dropping an FF1 ROM onto randomize.exe. You MUST put the ROM in
-the same folder as the exe, or it won't work.
+you run it by dragging and dropping an FF1 ROM onto randomize.exe.
 
 Finally, this normally only works on Windows. For Mac and Linux, I can only point you to
 WINE: https://www.winehq.org
