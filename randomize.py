@@ -173,15 +173,15 @@ if (good == 1):
         os.remove("out.nds")
     subprocess.run([ "dslazy.bat", "UNPACK", sys.argv[1] ])
     
-    if ((res["dig"] == "Yes") or (res["green"] == "Yes")):
-        subprocess.run([ "xdelta3-3.0.11-x86_64.exe", "-d", "-f", "-s", "NDS_UNPACK/data/episode/e0102", "output_e0102.xdelta",
+    subprocess.run([ "xdelta3-3.0.11-x86_64.exe", "-d", "-f", "-s", "NDS_UNPACK/data/episode/e0102", "output_e0102.xdelta",
+        "NDS_UNPACK/data/episode/e0102x" ])
+    if (os.path.exists("NDS_UNPACK/data/episode/e0102x") == False):
+        subprocess.run([ "xdelta3-3.0.11-x86_64.exe", "-d", "-f", "-s", "NDS_UNPACK/data/episode/e0102", "output_e0102_j.xdelta",
             "NDS_UNPACK/data/episode/e0102x" ])
-        if (os.path.exists("NDS_UNPACK/data/episode/e0102x") == False):
-            subprocess.run([ "xdelta3-3.0.11-x86_64.exe", "-d", "-f", "-s", "NDS_UNPACK/data/episode/e0102", "output_e0102_j.xdelta",
-                "NDS_UNPACK/data/episode/e0102x" ])
-        os.remove("NDS_UNPACK/data/episode/e0102")
-        os.rename("NDS_UNPACK/data/episode/e0102x", "NDS_UNPACK/data/episode/e0102")       
-
+    os.remove("NDS_UNPACK/data/episode/e0102")
+    os.rename("NDS_UNPACK/data/episode/e0102x", "NDS_UNPACK/data/episode/e0102") 
+        
+    if ((res["dig"] == "Yes") or (res["green"] == "Yes")):
         subprocess.run([ "fftool.exe", "NDS_UNPACK/data/map/m" ])
         for root, dirs, files in os.walk("NDS_UNPACK/data/map/m/bin"):
             for file in files:
