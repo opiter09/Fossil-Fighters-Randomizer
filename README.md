@@ -28,6 +28,8 @@ Features:
   is obviously required to know. Unfortunately, however, Joe's confirmation lines could not
   be altered (it crashed it for some odd reason), so you'll just have to remember what
   vivosaur it was
+- Because of this text editing, this randomizer will only work on the English version of the
+  game. Gomen'nasai.
 - Changing enemies' levels does not change how many moves they have. The code for this, like
   the ability to randomize teams, is here but dummied out, due to problems with the very
   hardcoded AI files
