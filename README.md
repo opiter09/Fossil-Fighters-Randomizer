@@ -11,9 +11,9 @@ Features:
 - Vivos are matched 1-to-1, so nothing is impossible to get
 - Your random starter cannot be Spinax or water-type, nor someone from Post-Game Vivos
 - The Custom Starter box must contain a single vivo Number, from 1 to 114, or it will do
-  nothing. It also ignores the usual restrictions on DP vivos, Tryma, and Post-Game Vivos,
-  so it is possible to make 100% completion impossible
-- If the custom starter is over 100, it will make appear to revive Chelon. This is purely
+  nothing. It also ignores the usual restrictions on Post-Game Vivos, so it is possible to
+  make 100% completion impossible
+- If the custom starter is over 100, it will appear to revive Chelon. This is purely
   cosmetic, though
 - The Starter in GP button force-swaps Spinax fossils and your starter's. If the starter is
   custom and has a number over 100, it will force-swap Spinax and Chelon instead
