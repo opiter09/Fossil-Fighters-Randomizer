@@ -18,16 +18,16 @@ Features:
 - The Starter in GP button force-swaps Spinax fossils and your starter's. If the starter is
   custom and has a number over 100, it will force-swap Spinax and Chelon instead
 - The three vivosaurs listed in the box Post-Game Vivos, naturally, only appear post-game.
-  These are Lambeo, Guan, and T-Rex. All you need to do to change this is edit the text input,
-  making sure to use the vivosaurs' Numbers, and separating each by a comma and any number of
-  spaces. Also, all entries after the 17th will be ignored
-- You will never be able to dig up Tryma or the DP vivosaurs. This is because I cannot find
-  where it says what they are, and I want to ensure all 100 vivosaurs can always be revived
+  These are Lambeo, Guan, Compso, and T-Rex. All you need to do to change this is edit the
+  text input, making sure to use the vivosaurs' Numbers, and separating each by a comma and
+  any number of spaces. Also, all entries after the 17th will be ignored
 - To make the Holt fight beatable, you can always find V-Raptor in the Keymonite room in the
   Digadigamid. IMPORTANT: For technical reasons, these fossils will ONLY appear if you have
   neither fossil chip
-- No text is altered. The thing saying you got a "Spinax dino medal" at the beginning should
-  be the only oddity, but who knows
+- The only text which is altered is the stuff saying which DP/Tryma vivos you get, since that
+  is obviously required to know. Unfortunately, however, Joe's confirmation lines could not
+  be altered (it crashed it for some odd reason), so you'll just have to remember what
+  vivosaur it was
 - Changing enemies' levels does not change how many moves they have. The code for this, like
   the ability to randomize teams, is here but dummied out, due to problems with the very
   hardcoded AI files
