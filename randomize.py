@@ -351,6 +351,14 @@ if (good == 1):
         subprocess.run([ "fftool.exe", "compress", "NDS_UNPACK/data/episode/bin/e0047/", "-i", "0.bin", "-o",
             "NDS_UNPACK/data/episode/e0047" ])
         shutil.rmtree("NDS_UNPACK/data/episode/bin/")
+        
+        f = open("ff1_vivoNames.txt", "rt")
+        vivoNames = [""] + list(f.read().split("\n")).copy()
+        f.close()
+        article = "a"
+        if (vivoNames[starterRes][0] in ["A", "E", "I", "O", "U"]):
+            article = "an"
+        messageReplace("0075", ["a $c2Spinax"], [article + " $c2" + vivoNames[starterRes]])
     
     if ((res["team"] == "Yes") or (levelR != 0)):
         f = open("ff1_enemyNames.txt", "rt")

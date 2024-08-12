@@ -24,10 +24,9 @@ Features:
 - To make the Holt fight beatable, you can always find V-Raptor in the Keymonite room in the
   Digadigamid. IMPORTANT: For technical reasons, these fossils will ONLY appear if you have
   neither fossil chip
-- The only text which is altered is the stuff saying which DP/Tryma vivos you get, since that
-  is obviously required to know. Unfortunately, however, Joe's confirmation lines could not
-  be altered (it crashed it for some odd reason), so you'll just have to remember what
-  vivosaur it was
+- The text saying which DP/Tryma vivos you get has been altered, since that is obviously
+  required to know. Unfortunately, however, Joe's confirmation lines could not be altered
+  (it crashed it for some odd reason), so you'll just have to remember what vivosaur it was
 - Because of this text editing, this randomizer will only work on the English version of the
   game. Gomen'nasai.
 - Changing enemies' levels does not change how many moves they have. The code for this, like
