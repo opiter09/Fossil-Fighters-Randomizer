@@ -25,8 +25,8 @@ Features:
   Digadigamid. IMPORTANT: For technical reasons, these fossils will ONLY appear if you have
   neither fossil chip
 - Due to how text replacing works, you may see multiple DP vivos listed as the same one in
-  the rare case where one vanilla DP vivosaur turns into another one. If that happens,
-  simply save before making any purchases, and write down which vivos are which
+  the rare case where one vanilla DP vivosaur turns into another one that comes after it.
+  If that happens, you can consult the file "newDPVivos.txt" to see which is which
 - The text saying which DP/Tryma vivos you get has been altered, since that is obviously
   required to know. Unfortunately, however, Joe's confirmation lines could not be altered
   (it crashed it for some odd reason), so you'll just have to remember what vivosaur it was

@@ -282,6 +282,16 @@ if (good == 1):
             f.write(r[(places[i] + 2):places[i + 1]])
         f.close()
         
+        f = open("ff1_vivoNames.txt", "rt")
+        vivoNames = [""] + list(f.read().split("\n")).copy()
+        f.close()
+        text = open("newDPVivos.txt", "wt")
+        text.close()
+        text = open("newDPVivos.txt", "at")
+        for n in [51, 19, 80, 22]:
+            text.write(vivoNames[n] + " --> " + vivoNames[vivos[n]] + "\n")
+        text.close()
+        
         subprocess.run([ "fftool.exe", "NDS_UNPACK/data/episode/e1155" ])
         f = open("NDS_UNPACK/data/episode/bin/e1155/0.bin", "rb")
         r = f.read()
