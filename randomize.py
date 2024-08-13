@@ -83,8 +83,7 @@ def messageReplace(fileNum, oldList, newList):
     f = open("./NDS_UNPACK/data/msg/bin/msg_" + fileNum + "/0.bin", "wb")
     f.close()
     f = open("./NDS_UNPACK/data/msg/bin/msg_" + fileNum + "/0.bin", "ab")
-    f.write((0x45).to_bytes(1, "little"))
-    f.write(r[1:16])
+    f.write(r[0:16])
     writeLoc = int.from_bytes(r[12:16], "little")
     for i in range(len(byteList) - 1):
         writeLoc = writeLoc + len(byteList[i])
@@ -95,17 +94,6 @@ def messageReplace(fileNum, oldList, newList):
     subprocess.run([ "fftool.exe", "compress", "./NDS_UNPACK/data/msg/bin/msg_" + fileNum + "/", "-c", "None", "-c", "None",
         "-i", "0.bin", "-o", "./NDS_UNPACK/data/msg/msg_" + fileNum ])
     shutil.rmtree("NDS_UNPACK/data/msg/bin/")
-    f2 = open("./NDS_UNPACK/data/msg/msg_" + fileNum, "rb")
-    r2 = f2.read()
-    f2.close()
-    f2 = open("./NDS_UNPACK/data/msg/msg_" + fileNum, "wb")
-    f2.close()
-    f2 = open("./NDS_UNPACK/data/msg/msg_" + fileNum, "ab")
-    rel = int.from_bytes(r2[0x24:0x28], "little") + 0x10
-    f2.write(r2[0:rel])
-    f2.write((0x44).to_bytes(1, "little"))
-    f2.write(r2[(rel + 1):])
-    f2.close()
         
 layout = [
     [ psg.Text("Randomize Fossils?", size = 17), psg.Button("Yes", key = "dig", size = 5) ],
