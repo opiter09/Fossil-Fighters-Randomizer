@@ -344,7 +344,9 @@ if (good == 1):
         f.write(fossil.to_bytes(2, "little"))
         f.write(r[0x8B6:0x9D0])
         f.write((min(100, starterRes)).to_bytes(2, "little"))
-        f.write(r[0x9D2:])
+        f.write(r[0x9D2:0xB18])
+        f.write((min(100, starterRes)).to_bytes(2, "little"))
+        f.write(r[0xB1A:])
         f.close()
         subprocess.run([ "fftool.exe", "compress", "NDS_UNPACK/data/episode/bin/e0047/", "-i", "0.bin", "-o",
             "NDS_UNPACK/data/episode/e0047" ])

@@ -16,8 +16,7 @@ Features:
 - If the custom starter is over 100, it will appear to revive Chelon. This is purely
   cosmetic, though
 - Failing the starter cleaning freezes the game. I tried editing the spot that should have
-  fixed it (0xB18 in episode/e0047, if you're interested) but that didn't workso uh, good
-  luck if your starter head is hard to clean
+  fixed it but that didn't work so uh, good luck if your starter head is hard to clean
 - The Starter in GP button force-swaps Spinax fossils and your starter's. If the starter is
   custom and has a number over 100, it will force-swap Spinax and Chelon instead
 - The three vivosaurs listed in the box Post-Game Vivos, naturally, only appear post-game.
