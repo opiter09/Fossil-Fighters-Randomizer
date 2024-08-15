@@ -348,8 +348,8 @@ if (good == 1):
         f.write((min(100, starterRes)).to_bytes(2, "little"))
         f.write(r[0xB1A:])
         f.close()
-        subprocess.run([ "fftool.exe", "compress", "NDS_UNPACK/data/episode/bin/e0047/", "-i", "0.bin", "-o",
-            "NDS_UNPACK/data/episode/e0047" ])
+        subprocess.run([ "fftool.exe", "compress", "NDS_UNPACK/data/episode/bin/e0047/", "-c", "None", "-c", "None",
+            "-i", "0.bin", "-o", "NDS_UNPACK/data/episode/e0047" ])
         shutil.rmtree("NDS_UNPACK/data/episode/bin/")
         
         f = open("ff1_vivoNames.txt", "rt")
