@@ -79,7 +79,11 @@ def messageReplace(fileNum, oldList, newList):
         for j in range(min(len(oldList), len(newList))):
             temp = temp.replace(oldList[j], newList[j])
         temp = temp.encode("UTF-8", errors = "ignore")
-        byteList.append(r[loc:(loc + 8)] + temp)
+        align = 4 - (len(r[loc:(loc + 8)] + temp) % 4)
+        if (align < 4):
+            byteList.append(r[loc:(loc + 8)] + temp + bytes(align))
+        else:
+            byteList.append(r[loc:(loc + 8)] + temp)
     f = open("./NDS_UNPACK/data/msg/bin/msg_" + fileNum + "/0.bin", "wb")
     f.close()
     f = open("./NDS_UNPACK/data/msg/bin/msg_" + fileNum + "/0.bin", "ab")
@@ -358,7 +362,7 @@ if (good == 1):
         article = "a"
         if (vivoNames[starterRes][0] in ["A", "E", "I", "O", "U"]):
             article = "an"
-        # messageReplace("0075", ["a $c2Spinax"], [article + " $c2" + vivoNames[starterRes]])
+        messageReplace("0075", ["a $c2Spinax"], [article + " $c2" + vivoNames[starterRes]])
     
     if ((res["team"] == "Yes") or (levelR != 0)):
         f = open("ff1_enemyNames.txt", "rt")
