@@ -358,7 +358,7 @@ if (good == 1):
         article = "a"
         if (vivoNames[starterRes][0] in ["A", "E", "I", "O", "U"]):
             article = "an"
-        messageReplace("0075", ["a $c2Spinax"], [article + " $c2" + vivoNames[starterRes]])
+        # messageReplace("0075", ["a $c2Spinax"], [article + " $c2" + vivoNames[starterRes]])
     
     if ((res["team"] == "Yes") or (levelR != 0)):
         f = open("ff1_enemyNames.txt", "rt")
