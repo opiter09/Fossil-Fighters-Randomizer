@@ -323,15 +323,29 @@ if (good == 1):
         f.close()
         oldDPList = []
         newDPList = []
+        articleDict = {}
+        for n in [51, 19, 80, 22, 98]:
+            if (vivoNames[vivos[n]][0] in ["A", "E", "I", "O", "U"]):
+                articleDict[str(n)] = "an"
+            else:
+                articleDict[str(n)] = "a"
         for n in [51, 19, 80, 22]:
-            for p in ["(Head)", "(Body)", "(Arms)", "(Legs)"]:
+            for p in ["(Head)", "(Body)", "(Arms)", "(Legs)", "head", "body", "arms", "legs"]:
                 oldDPList.append(vivoNames[n] + " " + p)
                 newDPList.append(vivoNames[vivos[n]] + " " + p)
+                oldDPList.append("a " + vivoNames[n] + "-" + p)
+                newDPList.append(articleDict[str(n)] + " " + vivoNames[vivos[n]] + "-" + p)
+                oldDPList.append("an " + vivoNames[n] + "-" + p)
+                newDPList.append(articleDict[str(n)] + " " + vivoNames[vivos[n]] + "-" + p)
         oldTrList = []
         newTrList = []
-        for p in ["(Head)", "(Body)", "(Arms)", "(Legs)"]: # , "head", "body", "arms", "legs"]:
+        for p in ["(Head)", "(Body)", "(Arms)", "(Legs)", "head", "body", "arms", "legs"]:
             oldTrList.append(vivoNames[98] + " " + p)
-            newTrList.append(vivoNames[vivos[98]] + " " + p)       
+            newTrList.append(vivoNames[vivos[98]] + " " + p)     
+            oldTrList.append("a " + vivoNames[98] + "-" + p)
+            newTrList.append(articleDict[str(98)] + " " + vivoNames[vivos[98]] + "-" + p)
+            oldTrList.append("an " + vivoNames[98] + "-" + p)
+            newTrList.append(articleDict[str(98)] + " " + vivoNames[vivos[98]] + "-" + p)           
         messageReplace("0398", oldDPList, newDPList)
         messageReplace("1191", oldTrList, newTrList)
         

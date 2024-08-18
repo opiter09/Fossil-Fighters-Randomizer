@@ -27,9 +27,6 @@ Features:
 - Due to how text replacing works, you may see multiple DP vivos listed as the same one in
   the rare case where one vanilla DP vivosaur turns into another one that comes after it.
   If that happens, you can consult the file "newDPVivos.txt" to see which is which
-- The text saying which DP/Tryma vivos you get has been altered, since that is obviously
-  required to know. Unfortunately, however, Joe's confirmation lines could not be altered
-  (it crashed it for some odd reason), so you'll just have to remember what vivosaur it was
 - Because of this text editing, this randomizer will only work on the English version of the
   game, gomen'nasai
 - Changing enemies' levels does not change how many moves they have. The code for this, like
