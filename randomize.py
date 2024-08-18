@@ -327,6 +327,8 @@ if (good == 1):
         for n in [51, 19, 80, 22, 98]:
             if (vivoNames[vivos[n]][0] in ["A", "E", "I", "O", "U"]):
                 articleDict[str(n)] = "an"
+            elif (vivoNames[vivos[n]] in ["F-Raptor", "M-Raptor"]):
+                articleDict[str(n)] = "an"
             else:
                 articleDict[str(n)] = "a"
         for n in [51, 19, 80, 22]:
