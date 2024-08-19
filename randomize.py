@@ -326,7 +326,8 @@ if (good == 1):
         articleDict = {}
         for n in [51, 19, 80, 22, 98]:
             if (vivoNames[vivos[n]][0] in ["A", "E", "I", "O", "U"]):
-                articleDict[str(n)] = "an"
+                if (vivoNames[vivos[n]] != "U-Raptor"):
+                    articleDict[str(n)] = "an"
             elif (vivoNames[vivos[n]] in ["F-Raptor", "M-Raptor"]):
                 articleDict[str(n)] = "an"
             else:
@@ -377,7 +378,8 @@ if (good == 1):
         f.close()
         article = "a"
         if (vivoNames[starterRes][0] in ["A", "E", "I", "O", "U"]):
-            article = "an"
+            if (vivoNames[starterRes] != "U-Raptor"):
+                article = "an"
         elif (vivoNames[starterRes] in ["F-Raptor", "M-Raptor"]):
             article = "an"
         messageReplace("0075", ["a $c2Spinax"], [article + " $c2" + vivoNames[starterRes]])
