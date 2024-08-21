@@ -188,7 +188,7 @@ if (good == 1):
     starterRes = random.choice(starter)
     
     try:
-        custom = max(1, min(114, int(customR)))
+        custom = max(1, min(116, int(customR)))
     except:
         custom = ""
     if (custom != ""):

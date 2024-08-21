@@ -10,9 +10,11 @@ Features:
 - You can only dig up the main 100
 - Vivos are matched 1-to-1, so nothing is impossible to get
 - Your random starter cannot be Spinax or water-type, nor someone from Post-Game Vivos
-- The Custom Starter box must contain a single vivo Number, from 1 to 114, or it will do
+- The Custom Starter box must contain a single vivo Number, from 1 to 116, or it will do
   nothing. It also ignores the usual restrictions on Post-Game Vivos, so it is possible to
   make 100% completion impossible
+- FF1 is much easier than FFC in terms of IDs: the only oddity is that choosing 105 or 106
+  will get you the OP Frigi and Igno, while the normal ones are 115 and 116
 - If the custom starter is over 100, it will appear to revive Chelon. This is purely
   cosmetic, though
 - The Starter in GP button force-swaps Spinax fossils and your starter's. If the starter is
