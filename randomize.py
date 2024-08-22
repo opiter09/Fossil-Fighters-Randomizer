@@ -363,10 +363,13 @@ if (good == 1):
         f.write(r[0:0x8B4])
         fossil = ((starterRes - 1) * 4) + 1
         f.write(fossil.to_bytes(2, "little"))
+        revi = 100
+        if ((starterRes <= 100) or (starterRes in [107, 108, 109, 110, 111])): # chickens
+            revi = starterRes
         f.write(r[0x8B6:0x9D0])
-        f.write((min(100, starterRes)).to_bytes(2, "little"))
+        f.write((revi).to_bytes(2, "little"))
         f.write(r[0x9D2:0xB18])
-        f.write((min(100, starterRes)).to_bytes(2, "little"))
+        f.write((revi).to_bytes(2, "little"))
         f.write(r[0xB1A:])
         f.close()
         subprocess.run([ "fftool.exe", "compress", "NDS_UNPACK/data/episode/bin/e0047/", "-c", "None", "-c", "None",

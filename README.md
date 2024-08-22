@@ -15,8 +15,8 @@ Features:
   make 100% completion impossible
 - FF1 is much easier than FFC in terms of IDs: the only oddity is that choosing 105 or 106
   will get you the OP Frigi and Igno, while the normal ones are 115 and 116
-- If the custom starter is over 100, it will appear to revive Chelon. This is purely
-  cosmetic, though
+- If the custom starter is over 100 and not a Chicken, it will appear to revive Chelon.
+  This is purely cosmetic, however
 - The Starter in GP button force-swaps Spinax fossils and your starter's. If the starter is
   custom and has a number over 100, it will force-swap Spinax and Chelon instead
 - The three vivosaurs listed in the box Post-Game Vivos, naturally, only appear post-game.
