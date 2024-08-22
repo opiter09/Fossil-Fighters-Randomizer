@@ -193,6 +193,9 @@ if (good == 1):
         custom = ""
     if (custom != ""):
         starterRes = custom
+        
+    if ((custom == "") and (res["start"] == "No")):
+        starterRes = 20
 
     if (res["green"] == "Yes"):
         if (res["dig"] == "No"):
