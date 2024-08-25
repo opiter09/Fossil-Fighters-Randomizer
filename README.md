@@ -29,6 +29,8 @@ Features:
 - Mono-Spawn Mode makes it so each map [1] only spawns one vivo (along with jewels, dropping
   fossils, etc.). The exception is Greenhorn Plains (and the Keymonite Room and the Trial Dig
   Site), so you have a good foundation and aren't completely at the mercy of RNG
+- Said vivo is the first found in the file, so some related maps will have the same one, and
+  others won't
 - Due to how text replacing works, you may see multiple DP vivos listed as the same one in
   the rare case where one vanilla DP vivosaur turns into another one that comes after it.
   If that happens, you can consult the file "newDPVivos.txt" to see which is which
