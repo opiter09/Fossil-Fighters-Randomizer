@@ -103,6 +103,7 @@ layout = [
     [ psg.Text("Randomize Fossils?", size = 17), psg.Button("Yes", key = "dig", size = 5) ],
     [ psg.Text("Randomize Starter?", size = 17), psg.Button("Yes", key = "start", size = 5) ],
     # [ psg.Text("Randomize Teams?", size = 17), psg.Button("No", key = "team", size = 5) ],
+    [ psg.Text("Mono-Spawn Mode?", size = 17), psg.Button("No", key = "mono", size = 5) ],
     [ psg.Text("GP Starter Fossils?", size = 17), psg.Button("Yes", key = "green", size = 5) ],
     [ psg.Text("Custom Starter:", size = 17), psg.Input(default_text = "", key = "custom", size = 5, enable_events = True) ],
     [ psg.Text("Post-Game Vivos:", size = 17), psg.Input(default_text = "1, 8, 22, 65", key = "broken", size = 20, enable_events = True) ],
@@ -112,7 +113,7 @@ layout = [
 ]
 window = psg.Window("", layout, grab_anywhere = True, resizable = True, font = "-size 12")
 good = 0
-res = { "dig": "Yes", "start": "Yes", "team": "No", "green": "Yes", "jewel": "Yes" }
+res = { "dig": "Yes", "start": "Yes", "team": "No", "mono": "No", "green": "Yes", "jewel": "Yes" }
 brokenR = ""
 levelR = 0
 while True:
@@ -227,6 +228,7 @@ if (good == 1):
                     f = open(os.path.join(root, file), "wb")
                     f.close()
                     f = open(os.path.join(root, file), "ab")
+                    first = 0
                     mapN = os.path.join(root, file).split("\\")[-2]
                     numTables = int.from_bytes(r[0x50:0x54], "little")
                     point = int.from_bytes(r[0x54:0x58], "little")
@@ -257,9 +259,14 @@ if (good == 1):
                                 point4 = int.from_bytes(r[(val + point3 + (i * 4)):(val + point3 + (i * 4) + 4)], "little")
                                 vivoNum = int.from_bytes(r[(val + point4):(val + point4 + 4)], "little")
                                 if (mapN == "0037"):
-                                    f.write((29).to_bytes(4, "little"))
+                                    f.write((29).to_bytes(4, "little")) # V-Raptor
                                 else:
-                                    f.write(vivos[vivoNum].to_bytes(4, "little"))
+                                    if ((res["mono"] == "Yes") and (mapN not in ["0033", "0121"])):
+                                        if (first == 0):
+                                            first = vivos[vivoNum]
+                                        f.write(first.to_bytes(4, "little"))
+                                    else:
+                                        f.write(vivos[vivoNum].to_bytes(4, "little"))
                                 f.write(r[(val + point4 + 4):(val + point4 + 32)])
                                 if (i == (numSpawns - 1)) and ((val + point4 + 32) < realP[realP.index(val) + 1]):
                                     f.write(r[(val + point4 + 32):realP[realP.index(val) + 1]])
