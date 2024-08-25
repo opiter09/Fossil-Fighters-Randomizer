@@ -19,10 +19,10 @@ Features:
   This is purely cosmetic, however
 - The Starter in GP button force-swaps Spinax fossils and your starter's. If the starter is
   custom and has a number over 100, it will force-swap Spinax and Chelon instead
-- The three vivosaurs listed in the box Post-Game Vivos, naturally, only appear post-game.
-  These are Lambeo, Guan, Compso, and T-Rex. All you need to do to change this is edit the
-  text input, making sure to use the vivosaurs' Numbers, and separating each by a comma and
-  any number of spaces. Also, all entries after the 17th will be ignored
+- The seven vivosaurs listed in the box Post-Game Vivos, naturally, only appear post-game.
+  These are T-Rex, Guan, Compso, V-Raptor, Zino, Lambeo, and Centro. All you need to do to
+  change this is edit the text input, making sure to use the vivosaurs' Numbers, and separating
+  each by a comma and any number of spaces. Also, all entries after the 17th will be ignored
 - To make the Holt fight beatable, you can always find V-Raptor in the Keymonite room in the
   Digadigamid. IMPORTANT: For technical reasons, these fossils will ONLY appear if you have
   neither fossil chip

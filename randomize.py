@@ -106,7 +106,7 @@ layout = [
     [ psg.Text("Mono-Spawn Mode?", size = 17), psg.Button("No", key = "mono", size = 5) ],
     [ psg.Text("GP Starter Fossils?", size = 17), psg.Button("Yes", key = "green", size = 5) ],
     [ psg.Text("Custom Starter:", size = 17), psg.Input(default_text = "", key = "custom", size = 5, enable_events = True) ],
-    [ psg.Text("Post-Game Vivos:", size = 17), psg.Input(default_text = "1, 8, 22, 65", key = "broken", size = 20, enable_events = True) ],
+    [ psg.Text("Post-Game Vivos:", size = 17), psg.Input(default_text = "1, 8, 22, 29, 43, 65, 76", key = "broken", size = 20, enable_events = True) ],
     [ psg.Text("Team Level Change:", size = 17), psg.Input(default_text = "0", key = "level", size = 5, enable_events = True) ],
     [ psg.Text("TLC on Nameless?", size = 17), psg.Button("Yes", key = "jewel", size = 5) ],
     [ psg.Button("Run") ]
