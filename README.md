@@ -30,7 +30,7 @@ Features:
   fossils, etc.). The exception is Greenhorn Plains (and the Keymonite Room and the Trial Dig
   Site), so you have a good foundation and aren't completely at the mercy of RNG
 - Said vivo is the first found in the file, so some related maps will have the same one, and
-  others won't
+  others won't. Also, to be clear, with this on you will not be able to get every vivosaur
 - Due to how text replacing works, you may see multiple DP vivos listed as the same one in
   the rare case where one vanilla DP vivosaur turns into another one that comes after it.
   If that happens, you can consult the file "newDPVivos.txt" to see which is which
