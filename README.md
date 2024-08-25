@@ -26,6 +26,9 @@ Features:
 - To make the Holt fight beatable, you can always find V-Raptor in the Keymonite room in the
   Digadigamid. IMPORTANT: For technical reasons, these fossils will ONLY appear if you have
   neither fossil chip
+- Mono-Spawn Mode makes it so each map [1] only spawns one vivo (along with jewels, dropping
+  fossils, etc.). The exception is Greenhorn Plains (and the Keymonite Room and the Trial Dig
+  Site), so you have a good foundation and aren't completely at the mercy of RNG
 - Due to how text replacing works, you may see multiple DP vivos listed as the same one in
   the rare case where one vanilla DP vivosaur turns into another one that comes after it.
   If that happens, you can consult the file "newDPVivos.txt" to see which is which
@@ -43,6 +46,9 @@ you run it by dragging and dropping an FF1 ROM onto randomize.exe.
 
 Finally, this normally only works on Windows. For Mac and Linux, I can only point you to
 WINE: https://www.winehq.org
+
+[1]: I mean this in the more internal sense of "a continuous area with no loading zones in
+between", not a whole digsite.
 
 # Source Codes
 - FFTool: https://github.com/jianmingyong/Fossil-Fighters-Tool
