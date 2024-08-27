@@ -261,7 +261,7 @@ if (good == 1):
                                 if (mapN == "0037"):
                                     f.write((29).to_bytes(4, "little")) # V-Raptor
                                 else:
-                                    if ((res["mono"] == "Yes") and (mapN not in ["0033", "0121"])):
+                                    if ((res["mono"] == "Yes") and ((mapN not in ["0033", "0121"]) or (index in [7, 8]))):
                                         if (first == 0):
                                             first = vivos[vivoNum]
                                         f.write(first.to_bytes(4, "little"))

@@ -27,8 +27,8 @@ Features:
   Digadigamid. IMPORTANT: For technical reasons, these fossils will ONLY appear if you have
   neither fossil chip
 - Mono-Spawn Mode makes it so each map [1] only spawns one vivo (along with jewels, dropping
-  fossils, etc.). The exception is Greenhorn Plains (and the Keymonite Room and the Trial Dig
-  Site), so you have a good foundation and aren't completely at the mercy of RNG
+  fossils, etc.). The exception is non-PTD Greenhorn Plains (along with the Keymonite Room and
+  the Trial Dig Site), so you have a good foundation and aren't completely at the mercy of RNG
 - Said vivo is the first found in the file, so some related maps will have the same one, and
   others won't. Also, to be clear, with this on you will not be able to get every vivosaur
 - Due to how text replacing works, you may see multiple DP vivos listed as the same one in
