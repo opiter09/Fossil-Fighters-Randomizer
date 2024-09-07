@@ -40,7 +40,7 @@ Features:
   the ability to randomize teams, is here but dummied out, due to problems with the very
   hardcoded AI files
 
-If you would like to see the table of new spawns, see the "ff1_digsiteOutput.txt" the
+If you would like to see the table of new spawns, see the "newDigsiteSpawns.txt" the
 randomizer generates.
 
 Also, you download this by pressing the green "Code" button and choosing "Download ZIP," and

@@ -6,9 +6,9 @@ import sys
 import FreeSimpleGUI as psg
 
 def digsiteOutput():
-    text = open("ff1_digsiteOutput.txt", "wt")
+    text = open("newDigsiteSpawns.txt", "wt")
     text.close()
-    text = open("ff1_digsiteOutput.txt", "at")
+    text = open("newDigsiteSpawns.txt", "at")
     for root, dirs, files in os.walk("NDS_UNPACK/data/map/m/bin"):
         for file in files:
             if (file == "0.bin"):
@@ -58,7 +58,16 @@ def digsiteOutput():
                         point4 = int.from_bytes(r[(val + point3 + (i * 4)):(val + point3 + (i * 4) + 4)], "little")
                         vivoNum = int.from_bytes(r[(val + point4):(val + point4 + 4)], "little")
                         chance = int.from_bytes(r[(val + point4 + 4):(val + point4 + 8)], "little")
-                        text.write("\t\t" + "[0x" + hex(val + point4).upper()[2:] + "] " + vivoNames[vivoNum] + ": " + str(chance) + "%\n")
+                        parts = [
+                            int.from_bytes(r[(val + point4 + 16):(val + point4 + 20)], "little"),
+                            int.from_bytes(r[(val + point4 + 20):(val + point4 + 24)], "little"),
+                            int.from_bytes(r[(val + point4 + 24):(val + point4 + 28)], "little"),
+                            int.from_bytes(r[(val + point4 + 28):(val + point4 + 32)], "little")
+                        ]
+                        s = "\t\t" + "[0x" + hex(val + point4).upper()[2:] + "] " + vivoNames[vivoNum] + ": " + str(chance) + "% "
+                        s = s + "(Part 1: " + str(parts[0]) + "%, Part 2: " + str(parts[1]) + "%, Part 3: " + str(parts[2])
+                        s = s + "%, Part 4: " + str(parts[3]) + "%)\n"
+                        text.write(s)
                 if (check == 1):
                     text.write("\n")
     text.close()
