@@ -248,7 +248,7 @@ if (good == 1):
                             f.write(r[val:(val + 8)])
                             if (mapN == "0037"):
                                 f.write((0x6F).to_bytes(4, "little"))
-                                f.write((9).to_bytes(4, "little"))
+                                f.write((4).to_bytes(4, "little"))
                             else:
                                 f.write(r[(val + 8):(val + 16)])
                             f.write(r[(val + 16):(val + 0x2C)])
@@ -267,7 +267,13 @@ if (good == 1):
                                         f.write(first.to_bytes(4, "little"))
                                     else:
                                         f.write(vivos[vivoNum].to_bytes(4, "little"))
-                                f.write(r[(val + point4 + 4):(val + point4 + 32)])
+                                f.write(r[(val + point4 + 4):(val + point4 + 16)])
+                                if (mapN == "0037"):
+                                    f.write((50).to_bytes(4, "little"))
+                                    f.write((50).to_bytes(4, "little"))
+                                    f.write(bytes(8))
+                                else:
+                                    f.write(r[(val + point4 + 16):(val + point4 + 32)])
                                 if (i == (numSpawns - 1)) and ((val + point4 + 32) < realP[realP.index(val) + 1]):
                                     f.write(r[(val + point4 + 32):realP[realP.index(val) + 1]])
                     f.close()
