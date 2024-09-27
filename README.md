@@ -9,6 +9,9 @@ Features:
   of the digsite selection menu during Chapter 1, the game will freeze
 - You can only dig up the main 100
 - Vivos are matched 1-to-1, so nothing is impossible to get
+- "Team Level Change:" raises or lowers (you can use negatives with a "-") the levels of all
+  vivosaurs in all enemy teams. If you set "TLC on Nameless?" to "No", this will not affect
+  random fighters (i.e. the ones named "Fossil Fighter")
 - Your random starter cannot be Spinax or water-type, nor someone from Post-Game Vivos
 - The Custom Starter box must contain a single vivo Number, from 1 to 116, or it will do
   nothing. It also ignores the usual restrictions on Post-Game Vivos, so it is possible to
