@@ -426,7 +426,7 @@ if (good == 1):
                     f.close()
                     shift = int.from_bytes(r[8:12], "little") - 0x5C
                     teamN = eNames[int.from_bytes(r[(0x64 + shift):(0x66 + shift)], "little") - 3362]
-                    if ((len(r) > 0x94) and ((res["jewel"] == "Yes") or (teamN != "Fossil Fighter"))):
+                    if ((len(r) > 0x94) and (r[4] == 0) and ((res["jewel"] == "Yes") or (teamN != "Fossil Fighter"))):
                         f = open(os.path.join(root, file), "wb")
                         f.close()
                         f = open(os.path.join(root, file), "ab")
