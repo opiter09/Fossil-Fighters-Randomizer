@@ -1,7 +1,12 @@
 # Fossil-Fighters-Randomizer
 This is a digsite, starter, and (not now but hopefully in the future) teams randomizer for FF1.
 
-You MUST put the ROM in the same folder as the exe, or it won't work.
+You download this by pressing the green "Code" button and choosing "Download ZIP", and
+you run it by dragging and dropping an FFC ROM onto randomize.exe. Note that you MUST put
+the ROM in the same folder as the exe, or it won't work.
+
+Furthermore, this is only designed for Windows. For Mac and Linux, I can only point you to
+WINE: https://www.winehq.org
 
 Features:
 - This mod uses event-editing shenanigans to make it so you cannot go to the Trial Dig Site,
@@ -43,14 +48,8 @@ Features:
   the ability to randomize teams, is here but dummied out, due to problems with the very
   hardcoded AI files
 
-If you would like to see the table of new spawns, see the "newDigsiteSpawns.txt" the
+Finally, if you would like to see the table of new spawns, see the "newDigsiteSpawns.txt" the
 randomizer generates.
-
-Also, you download this by pressing the green "Code" button and choosing "Download ZIP", and
-you run it by dragging and dropping an FF1 ROM onto randomize.exe.
-
-Finally, this normally only works on Windows. For Mac and Linux, I can only point you to
-WINE: https://www.winehq.org
 
 [1]: I mean this in the more internal sense of "a continuous area with no loading zones in
 between", not a whole digsite.
