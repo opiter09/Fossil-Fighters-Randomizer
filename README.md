@@ -2,7 +2,7 @@
 This is a digsite, starter, and (not now but hopefully in the future) teams randomizer for FF1.
 
 You download this by pressing the green "Code" button and choosing "Download ZIP", and
-you run it by dragging and dropping an FFC ROM onto randomize.exe. Note that you MUST put
+you run it by dragging and dropping an FF1 ROM onto randomize.exe. Note that you MUST put
 the ROM in the same folder as the exe, or it won't work.
 
 Furthermore, this is only designed for Windows. For Mac and Linux, I can only point you to
