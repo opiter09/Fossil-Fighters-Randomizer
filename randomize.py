@@ -165,8 +165,7 @@ if (good == 1):
     subprocess.run([ "fftool.exe", "NDS_UNPACK/data/episode" ])
     subprocess.run([ "fftool.exe", "NDS_UNPACK/data/etc/creature_defs" ])
     subprocess.run([ "fftool.exe", "NDS_UNPACK/data/map/m" ])
-    
-    # the great de-hardcodening
+
     shift = []
     for root, dirs, files in os.walk("NDS_UNPACK/data/map/m/bin"):
         for file in files:
