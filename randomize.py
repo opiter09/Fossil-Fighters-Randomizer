@@ -391,8 +391,8 @@ if (good == 1):
                                 if (i == (numSpawns - 1)) and ((val + point4 + 32) < realP[realP.index(val) + 1]):
                                     f.write(r[(val + point4 + 32):realP[realP.index(val) + 1]])
                     f.close()
-                    subprocess.run([ "fftool.exe", "compress", "NDS_UNPACK/data/map/m/bin/" + mapN, "-i", "0.bin", "-o",
-                        "NDS_UNPACK/data/map/m/" + mapN ])
+                    subprocess.run([ "fftool.exe", "compress", "NDS_UNPACK/data/map/m/bin/" + mapN, "-c", "None", "-c", "None",
+                        "-i", "0.bin", "-o", "NDS_UNPACK/data/map/m/" + mapN ])
         digsiteOutput()
         
     if (res["dig"] == "Yes"):
