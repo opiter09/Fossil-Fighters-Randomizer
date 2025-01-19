@@ -571,7 +571,4 @@ if (good == 1):
     
     subprocess.run([ "dslazy.bat", "PACK", "out.nds" ])
     subprocess.run([ "xdelta3-3.0.11-x86_64.exe", "-e", "-f", "-s", sys.argv[1], "out.nds", "out.xdelta" ])
-    psg.popup("You can now play out.nds!", font = "-size 12")
-
-
-    
+    psg.popup("You can now play out.nds!", font = "-size 12") 
