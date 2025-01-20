@@ -73,6 +73,9 @@ def digsiteOutput():
     text.close()
 
 def messageReplace(fileNum, oldList, newList):
+    if (japan == True):
+        return
+
     byteList = []
     subprocess.run([ "fftool.exe", "./NDS_UNPACK/data/msg/msg_" + fileNum ])
     f = open("./NDS_UNPACK/data/msg/bin/msg_" + fileNum + "/0.bin", "rb")
@@ -154,11 +157,26 @@ if (good == 1):
         os.remove("out.nds")
     subprocess.run([ "dslazy.bat", "UNPACK", sys.argv[1] ])
     
-    subprocess.run([ "xdelta3-3.0.11-x86_64.exe", "-d", "-f", "-s", "NDS_UNPACK/data/episode/e0102", "output_e0102.xdelta",
-        "NDS_UNPACK/data/episode/e0102x" ])
-    if (os.path.exists("NDS_UNPACK/data/episode/e0102x") == True):
-        os.remove("NDS_UNPACK/data/episode/e0102")
-        os.rename("NDS_UNPACK/data/episode/e0102x", "NDS_UNPACK/data/episode/e0102")
+    f = open(sys.argv[1], "rb")
+    r = f.read()
+    f.close()
+    if (r[0x0F] == 0x45): # "J"
+        japan = True
+    else:
+        japan = False
+    
+    if (japan == False):
+        subprocess.run([ "xdelta3-3.0.11-x86_64.exe", "-d", "-f", "-s", "NDS_UNPACK/data/episode/e0102", "output_e0102.xdelta",
+            "NDS_UNPACK/data/episode/e0102x" ])
+        if (os.path.exists("NDS_UNPACK/data/episode/e0102x") == True):
+            os.remove("NDS_UNPACK/data/episode/e0102")
+            os.rename("NDS_UNPACK/data/episode/e0102x", "NDS_UNPACK/data/episode/e0102")
+    else:
+        subprocess.run([ "xdelta3-3.0.11-x86_64.exe", "-d", "-f", "-s", "NDS_UNPACK/data/episode/e0102", "output_e0102_j.xdelta",
+            "NDS_UNPACK/data/episode/e0102x" ])
+        if (os.path.exists("NDS_UNPACK/data/episode/e0102x") == True):
+            os.remove("NDS_UNPACK/data/episode/e0102")
+            os.rename("NDS_UNPACK/data/episode/e0102x", "NDS_UNPACK/data/episode/e0102")
 
     
     subprocess.run([ "fftool.exe", "NDS_UNPACK/data/battle" ])
@@ -419,7 +437,7 @@ if (good == 1):
         text = open("newDPVivos.txt", "wt")
         text.close()
         text = open("newDPVivos.txt", "at")
-        for n in donors:
+        for n in (donors + [trymaNum]):
             text.write(vivoNames[n] + " --> " + vivoNames[vivos[n]] + "\n")
         text.close()
         

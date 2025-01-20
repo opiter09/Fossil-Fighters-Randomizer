@@ -42,8 +42,9 @@ Features:
 - Due to how text replacing works, you may see multiple DP vivos listed as the same one in
   the rare case where one vanilla DP vivosaur turns into another one that comes after it.
   If that happens, you can consult the file "newDPVivos.txt" to see which is which
-- Because of this text editing, this randomizer will only work on the English version of the
-  game, gomen'nasai
+- Because I don't speak Japanese, the text editing part is ignored when randomizing Japanese
+  ROMs. Therefore, in that case you will also have to consult the file "newDPVivos.txt" (which
+  also shows what Tryma turned into). Also, the names there are in English, gomen'nasai
 - Changing enemies' levels does not change how many moves they have. The code for this, like
   the ability to randomize teams, is here but dummied out, due to problems with the very
   hardcoded AI files
