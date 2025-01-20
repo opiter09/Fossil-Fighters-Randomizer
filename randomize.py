@@ -160,7 +160,7 @@ if (good == 1):
     f = open(sys.argv[1], "rb")
     r = f.read()
     f.close()
-    if (r[0x0F] == 0x45): # "J"
+    if (r[0x0F] == 0x4A): # "J"
         japan = True
     else:
         japan = False
