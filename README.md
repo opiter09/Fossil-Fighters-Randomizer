@@ -44,7 +44,8 @@ Features:
   If that happens, you can consult the file "newDPVivos.txt" to see which is which
 - Because I don't speak Japanese, the text editing part is ignored when randomizing Japanese
   ROMs. Therefore, in that case you will also have to consult the file "newDPVivos.txt" (which
-  also shows what Tryma turned into). Also, the names there are in English, gomen'nasai
+  also shows what Tryma turned into). I was, however, able to make the names in there be Japanese
+  if your ROM is, so that's nice
 - Changing enemies' levels does not change how many moves they have. The code for this, like
   the ability to randomize teams, is here but dummied out, due to problems with the very
   hardcoded AI files

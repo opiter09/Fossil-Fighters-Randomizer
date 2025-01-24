@@ -9,6 +9,8 @@ def digsiteOutput():
     text = open("newDigsiteSpawns.txt", "wt")
     text.close()
     text = open("newDigsiteSpawns.txt", "at")
+    vivoNames = ["NONE"] + list(open("ff1_vivoNames.txt", "rt").read().split("\n"))
+    vivoNamesJ = [("NONE").encode("UTF-8", errors = "ignore")] + list(open("ff1_vivoNames_j.txt", "rb").read().split((0x0A).to_bytes(1, "little")))
     for root, dirs, files in os.walk("NDS_UNPACK/data/map/m/bin"):
         for file in files:
             if (file == "0.bin"):
@@ -25,9 +27,6 @@ def digsiteOutput():
                         for n in nums:
                             if (int(mapN.split(" [")[0]) == int(n)):
                                 mapN = mapN + " [" + t.split(": ")[1] + "]"
-                f = open("ff1_vivoNames.txt", "rt")
-                vivoNames = [""] + list(f.read().split("\n")).copy()
-                f.close()
                 realP = [ int.from_bytes(r[point:(point + 4)], "little") ]
                 loc = point + 4
                 while (realP[-1] > 0):
@@ -71,6 +70,16 @@ def digsiteOutput():
                 if (check == 1):
                     text.write("\n")
     text.close()
+    if (japan == True):
+        f = open("newDigsiteSpawns.txt", "rb")
+        r = f.read()
+        f.close()
+        for i in range(116):
+            r = r.replace(("] " + vivoNames[i] + ": ").encode("UTF-8", errors = "ignore"),
+                ("] ").encode("UTF-8", errors = "ignore") + vivoNamesJ[i] + (": ").encode("UTF-8", errors = "ignore"))
+        f = open("newDigsiteSpawns.txt", "wb")
+        f.write(r)
+        f.close()
 
 def messageReplace(fileNum, oldList, newList):
     if (japan == True):
@@ -183,6 +192,9 @@ if (good == 1):
     subprocess.run([ "fftool.exe", "NDS_UNPACK/data/episode" ])
     subprocess.run([ "fftool.exe", "NDS_UNPACK/data/etc/creature_defs" ])
     subprocess.run([ "fftool.exe", "NDS_UNPACK/data/map/m" ])
+    
+    vivoNames = ["NONE"] + list(open("ff1_vivoNames.txt", "rt").read().split("\n"))
+    vivoNamesJ = [("NONE").encode("UTF-8", errors = "ignore")] + list(open("ff1_vivoNames_j.txt", "rb").read().split((0x0A).to_bytes(1, "little")))
 
     shift = []
     for root, dirs, files in os.walk("NDS_UNPACK/data/map/m/bin"):
@@ -271,6 +283,9 @@ if (good == 1):
     donors = []
     places = [0x10160, 0x10224, 0x102E8, 0x103AC, 0x10540, 0x10604, 0x106C8, 0x1078C, 0x10920, 0x109E4, 0x10AA8, 0x10B6C,
     0x10D00, 0x10DC4, 0x10E88, 0x10F4C]
+    if (japan == True):
+        for i in range(len(places)):
+            places[i] = places[i] + 0x110
     for i in range(0, len(places), 4):
         head = int.from_bytes(r[places[i]:(places[i] + 2)], "little")
         vivoNum = ((head - 1) // 4) + 1
@@ -341,9 +356,9 @@ if (good == 1):
     if ((custom == "") and (res["start"] == "No")):
         starterRes = oldStarter
 
+    if (res["dig"] == "No"):
+        vivos = list(range(101))
     if (res["green"] == "Yes"):
-        if (res["dig"] == "No"):
-            vivos = list(range(101))
         x = vivos.index(min(100, starterRes))
         y = vivos[oldStarter]
         vivos[x] = y
@@ -412,7 +427,7 @@ if (good == 1):
                         "-i", "0.bin", "-o", "NDS_UNPACK/data/map/m/" + mapN ])
         digsiteOutput()
         
-    if (res["dig"] == "Yes"):
+    if ((res["dig"] == "Yes") or ((res["green"] == "Yes") and (starterRes in (donors + [trymaNum])))):
         f = open("NDS_UNPACK/data/episode/bin/e0899/0.bin", "rb")
         r = f.read()
         f.close()
@@ -425,21 +440,33 @@ if (good == 1):
             parts = parts + [head, head + 1, head + 2, head + 3]
         places = [0x10160, 0x10224, 0x102E8, 0x103AC, 0x10540, 0x10604, 0x106C8, 0x1078C, 0x10920, 0x109E4, 0x10AA8, 0x10B6C,
             0x10D00, 0x10DC4, 0x10E88, 0x10F4C, len(r)]
+        if (japan == True):
+            for i in range(len(places) - 1):
+                places[i] = places[i] + 0x110
         f.write(r[0:places[0]])
         for i in range(16):
             f.write(parts[i].to_bytes(2, "little"))
             f.write(r[(places[i] + 2):places[i + 1]])
         f.close()
-        
-        f = open("ff1_vivoNames.txt", "rt")
-        vivoNames = [""] + list(f.read().split("\n")).copy()
-        f.close()
-        text = open("newDPVivos.txt", "wt")
-        text.close()
-        text = open("newDPVivos.txt", "at")
-        for n in (donors + [trymaNum]):
-            text.write(vivoNames[n] + " --> " + vivoNames[vivos[n]] + "\n")
-        text.close()
+
+        if (japan == False):
+            oldNames = [vivoNames[x] for x in (donors + [trymaNum])]
+            newNames = [vivoNames[vivos[x]] for x in (donors + [trymaNum])]
+            new = open("newDPVivos.txt", "wt")
+            new.close()
+            new = open("newDPVivos.txt", "at")
+            for i in range(5):
+                new.write(oldNames[i] + " --> " + newNames[i] + "\n")
+            new.close()
+        else:
+            oldNames = [vivoNamesJ[x] for x in (donors + [trymaNum])]
+            newNames = [vivoNamesJ[vivos[x]] for x in (donors + [trymaNum])]
+            new = open("newDPVivos.txt", "wb")
+            new.close()
+            new = open("newDPVivos.txt", "ab")
+            for i in range(5):
+                new.write(oldNames[i] + (" --> ").encode("UTF-8", errors = "ignore") + newNames[i] + (0x0A).to_bytes(1, "little"))
+            new.close()
         
         f = open("NDS_UNPACK/data/episode/bin/e1155/0.bin", "rb")
         r = f.read()
@@ -461,9 +488,6 @@ if (good == 1):
         subprocess.run([ "fftool.exe", "compress", "NDS_UNPACK/data/episode/bin/e1155/",  "-c", "None", "-c", "None",
             "-i", "0.bin", "-o", "NDS_UNPACK/data/episode/e1155" ])
         
-        f = open("ff1_vivoNames.txt", "rt")
-        vivoNames = [""] + list(f.read().split("\n")).copy()
-        f.close()
         oldDPList = []
         newDPList = []
         articleDict = {}
@@ -517,9 +541,6 @@ if (good == 1):
         subprocess.run([ "fftool.exe", "compress", "NDS_UNPACK/data/episode/bin/e0047/", "-c", "None", "-c", "None",
             "-i", "0.bin", "-o", "NDS_UNPACK/data/episode/e0047" ])
         
-        f = open("ff1_vivoNames.txt", "rt")
-        vivoNames = [""] + list(f.read().split("\n")).copy()
-        f.close()
         oldArticle = "a"
         if (vivoNames[oldStarter][0] in ["A", "E", "I", "O", "U"]):
             if (vivoNames[oldStarter] != "U-Raptor"):
