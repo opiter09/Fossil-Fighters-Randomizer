@@ -15,8 +15,9 @@ beginning with "PermissionError", try removing the folder "NDS_UNPACK", then dra
 ROM onto "DRAG_HERE_TO_SEE_ERRORS.bat" and try again. If this still yields a "PermissionError",
 try moving the randomizer folder into your Downloads folder (if it is not there already),
 removing the folder "NDS_UNPACK", and dragging your ROM onto "DRAG_HERE_TO_SEE_ERRORS.bat"
-again. If you receive an error message even after that, please take a screenshot of it and
-either post it into the #secret-lab channel of the Fossil Fighters Discord
+again. If you receive an error message even after that (or receive a non-"PermissionError"
+message after the prior attempt), please take a screenshot of it and either post it into
+the #secret-lab channel of the Fossil Fighters Discord
 (https://disboard.org/server/213792669569253376), or create an Issue here on GitHub.
 
 Features:
