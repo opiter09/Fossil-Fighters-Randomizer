@@ -62,8 +62,8 @@ Features:
   the ability to randomize teams, is here but dummied out, due to problems with the very
   hardcoded AI files
 
-Finally, if you would like to see the table of new spawns, see the "newDigsiteSpawns.txt" the
-randomizer generates.
+Finally, if you would like to see the table of new spawns, see the file "newDigsiteSpawns.txt"
+that the randomizer generates.
 
 [1]: I mean this in the more internal sense of "a continuous area with no loading zones in
 between", not a whole digsite.
