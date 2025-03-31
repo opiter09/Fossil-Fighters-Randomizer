@@ -6,7 +6,8 @@ you run it by dragging and dropping an FF1 ROM onto randomize.exe. Note that you
 the ROM in the same folder as the exe, or it won't work.
 
 Furthermore, this is only designed for Windows. For Mac and Linux, I can only point you to
-WINE: https://www.winehq.org
+WINE: https://www.winehq.org. When running this through WINE, please use the command
+``wine randomize.exe "ROMNAME.NDS"``, not ``wine randomize.exe`` alone.
 
 After running the randomizer, you should receive the output ROM "out.nds". If this does not
 occur, try dragging your ROM onto "DRAG_HERE_TO_SEE_ERRORS.bat" instead of "randomize.exe",
