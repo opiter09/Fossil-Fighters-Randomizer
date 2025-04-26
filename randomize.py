@@ -388,7 +388,12 @@ if (good == 1):
                     for val in realP[0:-1]:
                         index = int.from_bytes(r[(val + 4):(val + 8)], "little")
                         if (index == 0):
-                            f.write(r[val:realP[realP.index(val) + 1]])
+                            nextVal = realP[realP.index(val) + 1]
+                            f.write(r[val:(nextVal - 4)])
+                            if (int.from_bytes(r[(nextVal - 4):nextVal]) == 0):
+                                f.write((0x30).to_bytes(4, "little"))
+                            else:
+                                f.write(r[(nextVal - 4):nextVal])
                             continue
                         else:
                             f.write(r[val:(val + 8)])
@@ -397,7 +402,17 @@ if (good == 1):
                                 f.write((4).to_bytes(4, "little"))
                             else:
                                 f.write(r[(val + 8):(val + 16)])
-                            f.write(r[(val + 16):(val + 0x2C)])
+                            f.write(r[(val + 16):(val + 0x1C)])
+                            if (int.from_bytes(r[(val + 0x1C):(val + 0x20)]) == 0):
+                                f.write((0x30).to_bytes(4, "little"))
+                            else:
+                                f.write(r[(val + 0x1C):(val + 0x20)])
+                            f.write(r[(val + 0x20):(val + 0x24)])
+                            if (int.from_bytes(r[(val + 0x24):(val + 0x28)]) == 0):
+                                f.write((0x30).to_bytes(4, "little"))
+                            else:
+                                f.write(r[(val + 0x24):(val + 0x28)])
+                            f.write(r[(val + 0x28):(val + 0x2C)])
                             numSpawns = int.from_bytes(r[(val + 0x28):(val + 0x2C)], "little")
                             point3 = int.from_bytes(r[(val + 0x2C):(val + 0x30)], "little")
                             f.write(r[(val + 0x2C):(val + point3 + (numSpawns * 4))])
